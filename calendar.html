@@ -1027,6 +1027,136 @@ btn.addEventListener('click', function() {
 alert('سیستم ثبت‌نام در حال حاضر غیرفعال است. لطفاً از طریق تماس تلفنی اقدام کنید.');
 });
 });
+
+
+// Calendar Navigation
+let currentMonth = 9; // آذر = ماه 9 شمسی
+let currentYear = 1402;
+
+const monthNames = [
+    'فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور',
+    'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'
+];
+
+// تعداد روزهای هر ماه
+const monthDays = [31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29];
+
+// رویدادهای نمونه
+const events = {
+    '1402-9-5': 'کمپین کاشت درخت',
+    '1402-9-10': 'سمینار بازیافت',
+    '1402-9-25': 'کارگاه آموزشی',
+    '1402-10-2': 'دوچرخه‌سواری',
+    '1402-10-15': 'همایش ملی',
+    '1402-10-23': 'کارگاه پنل خورشیدی'
+};
+
+function updateCalendar() {
+    // به‌روزرسانی عنوان ماه
+    const calendarHeader = document.querySelector('.calendar-header h4');
+    calendarHeader.textContent = `${monthNames[currentMonth - 1]} ${currentYear}`;
+    
+    // پاک کردن تقویم قبلی
+    const calendarGrid = document.querySelector('.calendar-grid');
+    // حفظ هدرهای روزهای هفته
+    const headers = calendarGrid.querySelectorAll('.fw-bold');
+    calendarGrid.innerHTML = '';
+    headers.forEach(header => calendarGrid.appendChild(header));
+    
+    // محاسبه روز اول ماه
+    const firstDay = getFirstDayOfMonth(currentYear, currentMonth);
+    const daysInMonth = monthDays[currentMonth - 1];
+    
+    // اضافه کردن خانه‌های خالی برای روزهای قبل از شروع ماه
+    for (let i = 0; i < firstDay; i++) {
+        const emptyDay = document.createElement('div');
+        emptyDay.className = 'calendar-day';
+        calendarGrid.appendChild(emptyDay);
+    }
+    
+    // اضافه کردن روزهای ماه
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dayElement = document.createElement('div');
+        dayElement.className = 'calendar-day';
+        dayElement.textContent = day;
+        
+        // چک کردن رویداد
+        const dateKey = `${currentYear}-${currentMonth}-${day}`;
+        if (events[dateKey]) {
+            dayElement.classList.add('has-event');
+            dayElement.title = events[dateKey];
+        }
+        
+        calendarGrid.appendChild(dayElement);
+    }
+}
+
+// محاسبه روز اول ماه (0 = شنبه, 6 = جمعه)
+function getFirstDayOfMonth(year, month) {
+    // فرمول ساده برای تقویم شمسی
+    let totalDays = 0;
+    
+    // محاسبه روزهای سال‌های قبل
+    for (let y = 1; y < year; y++) {
+        totalDays += isLeapYear(y) ? 366 : 365;
+    }
+    
+    // محاسبه روزهای ماه‌های قبل در سال جاری
+    for (let m = 1; m < month; m++) {
+        totalDays += monthDays[m - 1];
+        if (m === 12 && isLeapYear(year)) {
+            totalDays += 1; // اسفند در سال کبیسه 30 روز است
+        }
+    }
+    
+    // روز اول فروردین 1 برابر با شنبه در نظر گرفته شده
+    return (totalDays + 1) % 7;
+}
+
+// چک کردن سال کبیسه
+function isLeapYear(year) {
+    return ((year + 38) % 128) <= 4;
+}
+
+// Event Listeners برای دکمه‌های ناوبری
+document.addEventListener('DOMContentLoaded', function() {
+    // دکمه ماه قبل
+    const prevButton = document.querySelector('.calendar-header button:first-child');
+    prevButton.addEventListener('click', function() {
+        currentMonth--;
+        if (currentMonth < 1) {
+            currentMonth = 12;
+            currentYear--;
+        }
+        updateCalendar();
+    });
+    
+    // دکمه ماه بعد
+    const nextButton = document.querySelector('.calendar-header button:last-child');
+    nextButton.addEventListener('click', function() {
+        currentMonth++;
+        if (currentMonth > 12) {
+            currentMonth = 1;
+            currentYear++;
+        }
+        updateCalendar();
+    });
+    
+    // نمایش تقویم اولیه
+    updateCalendar();
+});
+
+// کلیک روی روزهای دارای رویداد
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('has-event')) {
+        const day = e.target.textContent;
+        const dateKey = `${currentYear}-${currentMonth}-${day}`;
+        if (events[dateKey]) {
+            alert(`رویداد: ${events[dateKey]}\nتاریخ: ${day} ${monthNames[currentMonth - 1]} ${currentYear}`);
+        }
+    }
+});
+
 </script>
 </body>
 </html>
