@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>درباره ما - بنیاد آسمان آبی</title>
+
+<!-- Bootstrap 5 RTL -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- AOS Animation -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+<!-- Lightbox CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Inline Styles -->
+<style>
+:root {
+--primary-color: #2196F3;
+--secondary-color: #87CEEB;
+--dark-color: #1a1a1a;
+--light-bg: #f8f9fa;
+}
+
+body {
+font-family: 'Vazir', Arial, sans-serif;
+line-height: 1.8;
+}
+
+/* Header Styles */
+.header-top {
+background-color: var(--primary-color);
+color: white;
+padding: 10px 0;
+}
+
+.navbar {
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand img {
+height: 50px;
+}
+
+/* Page Header */
+.page-header {
+background: linear-gradient(rgba(33, 150, 243, 0.8), rgba(33, 150, 243, 0.8)), url('https://source.unsplash.com/1920x400/?blue-sky,nature') center/cover;
+padding: 100px 0 50px;
+color: white;
+text-align: center;
+}
+
+/* About Content */
+.about-content {
+padding: 60px 0;
+}
+
+.about-text {
+text-align: justify;
+line-height: 2;
+}
+
+/* Timeline */
+.timeline {
+position: relative;
+padding: 20px 0;
+}
+
+.timeline::before {
+content: '';
+position: absolute;
+right: 50%;
+top: 0;
+bottom: 0;
+width: 2px;
+background: var(--primary-color);
+}
+
+.timeline-item {
+position: relative;
+padding: 20px 0;
+}
+
+.timeline-content {
+background: white;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+width: 45%;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+margin-right: 55%;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+margin-left: 55%;
+}
+
+.timeline-dot {
+position: absolute;
+right: 50%;
+top: 30px;
+width: 20px;
+height: 20px;
+background: var(--primary-color);
+border-radius: 50%;
+transform: translateX(50%);
+border: 4px solid white;
+box-shadow: 0 0 0 3px var(--primary-color);
+}
+
+/* Statistics */
+.stat-box {
+background: white;
+padding: 40px 20px;
+border-radius: 10px;
+box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+text-align: center;
+transition: transform 0.3s;
+}
+
+.stat-box:hover {
+transform: translateY(-10px);
+}
+
+.stat-number {
+font-size: 48px;
+font-weight: bold;
+color: var(--primary-color);
+margin: 10px 0;
+}
+
+/* Mission Vision Values */
+.mvv-card {
+background: white;
+padding: 30px;
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+height: 100%;
+text-align: center;
+transition: all 0.3s;
+}
+
+.mvv-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.mvv-icon {
+font-size: 60px;
+color: var(--primary-color);
+margin-bottom: 20px;
+}
+
+/* Gallery */
+.gallery-item {
+margin-bottom: 20px;
+overflow: hidden;
+border-radius: 10px;
+box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+width: 100%;
+height: 250px;
+object-fit: cover;
+transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.timeline::before {
+right: 30px;
+}
+
+.timeline-content {
+width: calc(100% - 60px);
+margin-right: 60px !important;
+margin-left: 0 !important;
+}
+
+.timeline-dot {
+right: 30px;
+}
+}
+
+
+/* Footer */
+footer {
+background: var(--dark-color);
+color: white;
+padding: 40px 0 20px;
+}
+
+.footer-links a {
+color: white;
+text-decoration: none;
+transition: color 0.3s;
+}
+
+.footer-links a:hover {
+color: var(--secondary-color);
+}
+</style>
+</head>
+<body>
+<!-- Header Top -->
+<div class="header-top">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-md-6">
+<small>
+<i class="fas fa-phone me-2"></i> 021-12345678
+<span class="mx-3">|</span>
+<i class="fas fa-envelope me-2"></i> info@asemanabi.org
+</small>
+</div>
+<div class="col-md-6 text-end">
+<a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+<a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+<a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+<a href="#" class="text-white"><i class="fab fa-telegram"></i></a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+<div class="container">
+<a class="navbar-brand" href="index.html">
+<img src="images/logo.png" alt="آسمان آبی">
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item">
+<a class="nav-link" href="index.html">صفحه اصلی</a>
+</li>
+<li class="nav-item">
+<a class="nav-link active" href="about.html">درباره ما</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="team.html">تیم ما</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="calendar.html">تقویم رویدادها</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="membership.html">عضویت</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="feedback.html">ارتباط با ما</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="contact.html">تماس</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- Page Header -->
+<div class="page-header">
+<div class="container">
+<h1 class="display-4 fw-bold" data-aos="fade-up">درباره بنیاد آسمان آبی</h1>
+<p class="lead" data-aos="fade-up" data-aos-delay="100">برای هوای پاک و آسمان آبی تلاش می‌کنیم</p>
+</div>
+</div>
+
+<!-- About Content -->
+<section class="about-content">
+<div class="container">
+<div class="row align-items-center mb-5">
+<div class="col-md-6" data-aos="fade-right">
+<h2 class="mb-4">داستان ما</h2>
+<div class="about-text">
+<p>بنیاد آسمان آبی در سال ۱۳۹۵ با هدف کاهش آلودگی هوا و ترویج استفاده از انرژی‌های پاک تأسیس شد. ما گروهی از متخصصان محیط زیست، مهندسان انرژی و فعالان اجتماعی هستیم که برای داشتن هوای پاک‌تر و آینده‌ای بهتر تلاش می‌کنیم.</p>
+<p>در طول این سال‌ها، با برگزاری بیش از ۱۸۰ برنامه آموزشی و اجرایی، توانسته‌ایم نقش مؤثری در افزایش آگاهی عمومی و کاهش آلودگی هوا در شهرهای مختلف کشور داشته باشیم.</p>
+<p>ما معتقدیم که با همکاری همه افراد جامعه، می‌توانیم آسمان آبی را برای نسل‌های آینده حفظ کنیم. پیوستن شما به این حرکت، قدمی بزرگ در مسیر دستیابی به این هدف است.</p>
+</div>
+</div>
+<div class="col-md-6" data-aos="fade-left">
+<img src="https://source.unsplash.com/600x400/?team,environment" alt="تیم آسمان آبی" class="img-fluid rounded shadow">
+</div>
+</div>
+
+<!-- Mission, Vision, Values -->
+<div class="row mb-5">
+<div class="col-md-4 mb-4" data-aos="fade-up">
+<div class="mvv-card">
+<i class="fas fa-bullseye mvv-icon"></i>
+<h3 class="mb-3">مأموریت ما</h3>
+<p>کاهش آلودگی هوا و ترویج استفاده از انرژی‌های پاک از طریق آموزش، آگاه‌سازی و اجرای پروژه‌های عملی در جامعه</p>
+</div>
+</div>
+<div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+<div class="mvv-card">
+<i class="fas fa-eye mvv-icon"></i>
+<h3 class="mb-3">چشم‌انداز ما</h3>
+<p>ایجاد جامعه‌ای که در آن همه شهروندان از هوای پاک بهره‌مند باشند و انرژی‌های تجدیدپذیر جایگزین سوخت‌های فسیلی شده باشند</p>
+</div>
+</div>
+<div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+<div class="mvv-card">
+<i class="fas fa-heart mvv-icon"></i>
+<h3 class="mb-3">ارزش‌های ما</h3>
+<p>مسئولیت‌پذیری، شفافیت، نوآوری، مشارکت جمعی و تعهد به حفظ محیط زیست برای نسل‌های آینده</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Statistics Section -->
+<section class="py-5 bg-light">
+<div class="container">
+<h2 class="text-center mb-5" data-aos="fade-up">دستاوردهای ما در یک نگاه</h2>
+<div class="row">
+<div class="col-md-3 col-6 mb-4" data-aos="fade-up">
+<div class="stat-box">
+<i class="fas fa-users fa-3x text-primary mb-3"></i>
+<div class="stat-number" data-count="2500">0</div>
+<h5>تعداد اعضا</h5>
+<p class="text-muted mb-0">عضو فعال در سراسر کشور</p>
+</div>
+</div>
+<div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+<div class="stat-box">
+<i class="fas fa-hands-helping fa-3x text-success mb-3"></i>
+<div class="stat-number" data-count="850">0</div>
+<h5>تعداد حامیان</h5>
+<p class="text-muted mb-0">حامی مالی و معنوی</p>
+</div>
+</div>
+<div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+<div class="stat-box">
+<i class="fas fa-calendar-check fa-3x text-warning mb-3"></i>
+<div class="stat-number" data-count="180">0</div>
+<h5>برنامه‌های برگزار شده</h5>
+<p class="text-muted mb-0">کارگاه، سمینار و رویداد</p>
+</div>
+</div>
+<div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+<div class="stat-box">
+<i class="fas fa-award fa-3x text-danger mb-3"></i>
+<div class="stat-number" data-count="15">0</div>
+<h5>جوایز و افتخارات</h5>
+<p class="text-muted mb-0">در سطح ملی و بین‌المللی</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Timeline Section -->
+<section class="py-5">
+<div class="container">
+<h2 class="text-center mb-5" data-aos="fade-up">مسیر پیموده شده</h2>
+<div class="timeline">
+<div class="timeline-item" data-aos="fade-up">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h5>۱۳۹۵ - تأسیس بنیاد</h5>
+<p>شروع فعالیت با ۵ عضو مؤسس و ایده‌ای بزرگ برای تغییر</p>
+</div>
+</div>
+<div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h5>۱۳۹۷ - اولین کمپین دوچرخه‌سواری</h5>
+<p>راه‌اندازی "پنجشنبه‌های بدون خودرو" با مشارکت ۵۰۰ نفر</p>
+</div>
+</div>
+<div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h5>۱۳۹۹ - گسترش فعالیت‌ها</h5>
+<p>افتتاح دفاتر در ۵ استان و عضویت بیش از ۱۰۰۰ نفر</p>
+</div>
+</div>
+<div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h5>۱۴۰۱ - پروژه انرژی خورشیدی</h5>
+<p>نصب پنل‌های خورشیدی در ۲۰ مدرسه روستایی</p>
+</div>
+</div>
+<div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h5>۱۴۰۲ - جایزه بین‌المللی</h5>
+<p>دریافت جایزه بهترین NGO محیط زیستی از سازمان ملل</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Gallery Section -->
+<section class="py-5 bg-light">
+<div class="container">
+<h2 class="text-center mb-5" data-aos="fade-up">گالری تصاویر</h2>
+<div class="row">
+<div class="col-md-4 col-6" data-aos="fade-up">
+<div class="gallery-item">
+<a href="https://source.unsplash.com/800x600/?environmental-workshop" data-lightbox="gallery" data-title="کارگاه آموزشی محیط زیست">
+<img src="https://source.unsplash.com/400x300/?environmental-workshop" alt="کارگاه آموزشی">
+</a>
+</div>
+</div>
+<div class="col-md-4 col-6" data-aos="fade-up" data-aos-delay="100">
+<div class="gallery-item">
+<a href="https://source.unsplash.com/800x600/?cycling-event" data-lightbox="gallery" data-title="رویداد دوچرخه‌سواری">
+<img src="https://source.unsplash.com/400x300/?cycling-event" alt="دوچرخه‌سواری">
+</a>
+</div>
+</div>
+<div class="col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
+<div class="gallery-item">
+<a href="https://source.unsplash.com/800x600/?solar-panels" data-lightbox="gallery" data-title="نصب پنل‌های خورشیدی">
+<img src="https://source.unsplash.com/400x300/?solar-panels" alt="انرژی خورشیدی">
+</a>
+</div>
+</div>
+<div class="col-md-4 col-6" data-aos="fade-up" data-aos-delay="300">
+<div class="gallery-item">
+<a href="https://source.unsplash.com/800x600/?tree-planting" data-lightbox="gallery" data-title="کاشت درخت">
+<img src="https://source.unsplash.com/400x300/?tree-planting" alt="کاشت درخت">
+</a>
+</div>
+</div>
+<div class="col-md-4 col-6" data-aos="fade-up" data-aos-delay="400">
+<div class="gallery-item">
+<a href="https://source.unsplash.com/800x600/?conference" data-lightbox="gallery" data-title="همایش سالانه">
+<img src="https://source.unsplash.com/400x300/?conference" alt="همایش">
+</a>
+</div>
+</div>
+<div class="col-md-4 col-6" data-aos="fade-up" data-aos-delay="500">
+<div class="gallery-item">
+<a href="https://source.unsplash.com/800x600/?volunteers" data-lightbox="gallery" data-title="داوطلبان ما">
+<img src="https://source.unsplash.com/400x300/?volunteers" alt="داوطلبان">
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 bg-primary text-white">
+<div class="container text-center">
+<h2 class="mb-4" data-aos="fade-up">به ما بپیوندید</h2>
+<p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">با عضویت در بنیاد آسمان آبی، قدمی بزرگ برای حفظ محیط زیست بردارید</p>
+<div data-aos="fade-up" data-aos-delay="200">
+<a href="membership.html" class="btn btn-light btn-lg me-3">عضویت در بنیاد</a>
+<a href="contact.html" class="btn btn-outline-light btn-lg">تماس با ما</a>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-md-4 mb-4">
+<h5 class="mb-3">درباره بنیاد آسمان آبی</h5>
+<p>ما گروهی از دوستداران محیط زیست هستیم که برای داشتن هوای پاک و آسمان آبی تلاش می‌کنیم.</p>
+<div class="mt-3">
+<a href="#" class="text-white me-3"><i class="fab fa-facebook fa-2x"></i></a>
+<a href="#" class="text-white me-3"><i class="fab fa-twitter fa-2x"></i></a>
+<a href="#" class="text-white me-3"><i class="fab fa-instagram fa-2x"></i></a>
+<a href="#" class="text-white"><i class="fab fa-telegram fa-2x"></i></a>
+</div>
+</div>
+<div class="col-md-4 mb-4">
+<h5 class="mb-3">دسترسی سریع</h5>
+<ul class="list-unstyled footer-links">
+<li class="mb-2"><a href="index.html"><i class="fas fa-angle-left me-2"></i>صفحه اصلی</a></li>
+<li class="mb-2"><a href="team.html"><i class="fas fa-angle-left me-2"></i>تیم ما</a></li>
+<li class="mb-2"><a href="calendar.html"><i class="fas fa-angle-left me-2"></i>تقویم رویدادها</a></li>
+<li class="mb-2"><a href="membership.html"><i class="fas fa-angle-left me-2"></i>عضویت در بنیاد</a></li>
+</ul>
+</div>
+<div class="col-md-4 mb-4">
+<h5 class="mb-3">تماس با ما</h5>
+<p class="mb-1"><i class="fas fa-phone me-2"></i>021-12345678</p>
+<p class="mb-1"><i class="fas fa-envelope me-2"></i>info@asemanabi.org</p>
+<p><i class="fas fa-map-marker-alt me-2"></i>تهران، خیابان ولیعصر، پلاک ۱۲۳</p>
+</div>
+</div>
+<hr class="bg-white">
+<div class="text-center py-3">
+<p class="mb-0">© ۱۴۰۲ بنیاد آسمان آبی - تمامی حقوق محفوظ است</p>
+</div>
+</div>
+</footer>
+
+
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Inline Scripts -->
+<script>
+// Initialize AOS
+AOS.init({
+duration: 1000,
+once: true
+});
+
+// Counter Animation
+const counters = document.querySelectorAll('.stat-number');
+const speed = 200;
+
+const animateCounter = (counter) => {
+const animate = () => {
+const value = +counter.getAttribute('data-count');
+const data = +counter.innerText;
+const time = value / speed;
+
+if (data < value) {
+counter.innerText = Math.ceil(data + time);
+setTimeout(animate, 1);
+} else {
+counter.innerText = value.toLocaleString('fa-IR');
+}
+}
+animate();
+}
+
+// Intersection Observer for counters
+const observerOptions = {
+threshold: 0.5
+};
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+animateCounter(entry.target);
+observer.unobserve(entry.target);
+}
+});
+}, observerOptions);
+
+counters.forEach(counter => {
+observer.observe(counter);
+});
+
+// Lightbox Options
+lightbox.option({
+'resizeDuration': 200,
+'wrapAround': true,
+'positionFromTop': 50
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تقویم رویدادها - بنیاد آسمان آبی</title>
+
+<!-- Bootstrap 5 RTL -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- AOS Animation -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Inline Styles -->
+<style>
+:root {
+--primary-color: #2196F3;
+--secondary-color: #87CEEB;
+--dark-color: #1a1a1a;
+--light-bg: #f8f9fa;
+--success-color: #28a745;
+--warning-color: #ffc107;
+--danger-color: #dc3545;
+}
+
+body {
+font-family: 'Vazir', Arial, sans-serif;
+line-height: 1.8;
+}
+
+/* Header Styles */
+.header-top {
+background-color: var(--primary-color);
+color: white;
+padding: 10px 0;
+}
+
+.navbar {
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand img {
+height: 50px;
+}
+
+/* Page Header */
+.page-header {
+background: linear-gradient(rgba(33, 150, 243, 0.8), rgba(33, 150, 243, 0.8)), url('https://source.unsplash.com/1920x400/?calendar,event') center/cover;
+padding: 100px 0 50px;
+color: white;
+text-align: center;
+}
+
+/* Tabs */
+.event-tabs {
+display: flex;
+justify-content: center;
+gap: 20px;
+margin-bottom: 40px;
+}
+
+.event-tab {
+padding: 12px 30px;
+background: white;
+border: 2px solid var(--primary-color);
+border-radius: 30px;
+color: var(--primary-color);
+font-weight: bold;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.event-tab.active,
+.event-tab:hover {
+background: var(--primary-color);
+color: white;
+}
+
+/* Event Cards */
+.event-card {
+background: white;
+border: none;
+border-radius: 15px;
+overflow: hidden;
+box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+margin-bottom: 20px;
+transition: all 0.3s;
+cursor: pointer;
+}
+
+.event-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.event-card .event-date {
+background: var(--primary-color);
+color: white;
+padding: 20px;
+text-align: center;
+float: right;
+width: 120px;
+}
+
+.event-card .event-date .day {
+font-size: 36px;
+font-weight: bold;
+line-height: 1;
+}
+
+.event-card .event-date .month {
+font-size: 16px;
+}
+
+.event-card .event-date .year {
+font-size: 14px;
+opacity: 0.8;
+}
+
+.event-card .event-content {
+padding: 20px;
+margin-right: 120px;
+}
+
+.event-card .event-title {
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 10px;
+color: var(--dark-color);
+}
+
+.event-card .event-meta {
+display: flex;
+gap: 20px;
+color: #666;
+font-size: 14px;
+margin-bottom: 10px;
+}
+
+.event-card .event-meta i {
+color: var(--primary-color);
+}
+
+.event-card .event-description {
+color: #666;
+line-height: 1.6;
+}
+
+.event-card .event-status {
+display: inline-block;
+padding: 4px 12px;
+border-radius: 20px;
+font-size: 12px;
+font-weight: bold;
+margin-top: 10px;
+}
+
+.event-card .status-upcoming {
+background: #e3f2fd;
+color: var(--primary-color);
+}
+
+.event-card .status-ongoing {
+background: #e8f5e9;
+color: var(--success-color);
+}
+
+.event-card .status-completed {
+background: #f3e5f5;
+color: #9c27b0;
+}
+
+/* Past Events Style */
+.past-event .event-date {
+background: #666;
+}
+
+.past-event {
+opacity: 0.8;
+}
+
+/* Event Modal */
+.event-modal .modal-header {
+background: var(--primary-color);
+color: white;
+}
+
+.event-modal .modal-body {
+padding: 30px;
+}
+
+.event-modal .event-image {
+width: 100%;
+height: 300px;
+object-fit: cover;
+border-radius: 10px;
+margin-bottom: 20px;
+}
+
+.event-modal .detail-item {
+display: flex;
+align-items: center;
+margin-bottom: 15px;
+padding-bottom: 15px;
+border-bottom: 1px solid #eee;
+}
+
+.event-modal .detail-item i {
+color: var(--primary-color);
+font-size: 20px;
+width: 30px;
+margin-left: 15px;
+}
+
+.event-modal .btn-register {
+background: var(--success-color);
+color: white;
+padding: 12px 40px;
+border: none;
+border-radius: 30px;
+font-weight: bold;
+transition: all 0.3s;
+}
+
+.event-modal .btn-register:hover {
+transform: translateY(-2px);
+box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
+
+/* Calendar View */
+.calendar-section {
+background: white;
+padding: 40px;
+border-radius: 15px;
+box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+margin-top: 40px;
+}
+
+.calendar-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.calendar-grid {
+display: grid;
+grid-template-columns: repeat(7, 1fr);
+gap: 10px;
+}
+
+.calendar-day {
+aspect-ratio: 1;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid #eee;
+border-radius: 10px;
+cursor: pointer;
+transition: all 0.3s;
+position: relative;
+}
+
+.calendar-day:hover {
+background: var(--light-bg);
+}
+
+.calendar-day.has-event {
+background: #e3f2fd;
+border-color: var(--primary-color);
+font-weight: bold;
+}
+
+.calendar-day.has-event::after {
+content: '';
+position: absolute;
+bottom: 5px;
+width: 6px;
+height: 6px;
+background: var(--primary-color);
+border-radius: 50%;
+}
+
+/* Footer */
+footer {
+background: var(--dark-color);
+color: white;
+padding: 40px 0 20px;
+}
+
+.footer-links a {
+color: white;
+text-decoration: none;
+transition: color 0.3s;
+}
+
+.footer-links a:hover {
+color: var(--secondary-color);
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+.event-card .event-date {
+float: none;
+width: 100%;
+}
+
+.event-card .event-content {
+margin-right: 0;
+margin-top: 10px;
+}
+
+.event-tabs {
+flex-direction: column;
+align-items: center;
+}
+
+.calendar-section {
+padding: 20px;
+}
+}
+</style>
+</head>
+<body>
+<!-- Header Top -->
+<div class="header-top">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-md-6">
+<small>
+<i class="fas fa-phone me-2"></i> 021-12345678
+<span class="mx-3">|</span>
+<i class="fas fa-envelope me-2"></i> info@asemanabi.org
+</small>
+</div>
+<div class="col-md-6 text-end">
+<a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+<a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+<a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+<a href="#" class="text-white"><i class="fab fa-telegram"></i></a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+<div class="container">
+<a class="navbar-brand" href="index.html">
+<img src="images/logo.png" alt="آسمان آبی">
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item">
+<a class="nav-link" href="index.html">صفحه اصلی</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="about.html">درباره ما</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="team.html">تیم ما</a>
+</li>
+<li class="nav-item">
+<a class="nav-link active" href="calendar.html">تقویم رویدادها</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="membership.html">عضویت</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="feedback.html">ارتباط با ما</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="contact.html">تماس</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- Page Header -->
+<div class="page-header">
+<div class="container">
+<h1 class="display-4 fw-bold" data-aos="fade-up">تقویم رویدادها</h1>
+<p class="lead" data-aos="fade-up" data-aos-delay="100">برنامه‌ها و رویدادهای بنیاد آسمان آبی</p>
+</div>
+</div>
+
+<!-- Events Section -->
+<section class="py-5">
+<div class="container">
+<!-- Tabs -->
+<div class="event-tabs" data-aos="fade-up">
+<div class="event-tab active" data-tab="upcoming">رویدادهای آینده</div>
+<div class="event-tab" data-tab="past">رویدادهای گذشته</div>
+<div class="event-tab" data-tab="all">همه رویدادها</div>
+</div>
+
+<!-- Upcoming Events -->
+<div id="upcoming-events" class="event-list">
+<!-- Event 1 -->
+<div class="event-card" data-aos="fade-up" data-bs-toggle="modal" data-bs-target="#eventModal1">
+<div class="event-date">
+<div class="day">۲۵</div>
+<div class="month">آذر</div>
+<div class="year">۱۴۰۲</div>
+</div>
+<div class="event-content">
+<h3 class="event-title">کارگاه آموزشی کاهش آلودگی هوا</h3>
+<div class="event-meta">
+<span><i class="fas fa-clock me-2"></i>۱۰:۰۰ - ۱۳:۰۰</span>
+<span><i class="fas fa-map-marker-alt me-2"></i>سالن همایش بنیاد</span>
+<span><i class="fas fa-users me-2"></i>ظرفیت: ۵۰ نفر</span>
+</div>
+<p class="event-description">
+آموزش روش‌های عملی کاهش آلودگی هوا در محیط خانه و محل کار با حضور کارشناسان مجرب
+</p>
+<span class="event-status status-upcoming">ثبت‌نام باز</span>
+</div>
+</div>
+
+<!-- Event 2 -->
+<div class="event-card" data-aos="fade-up" data-aos-delay="100" data-bs-toggle="modal" data-bs-target="#eventModal2">
+<div class="event-date">
+<div class="day">۲</div>
+<div class="month">دی</div>
+<div class="year">۱۴۰۲</div>
+</div>
+<div class="event-content">
+<h3 class="event-title">دوچرخه‌سواری پنجشنبه‌های سبز</h3>
+<div class="event-meta">
+<span><i class="fas fa-clock me-2"></i>۷:۰۰ - ۹:۰۰</span>
+<span><i class="fas fa-map-marker-alt me-2"></i>پارک ملت</span>
+<span><i class="fas fa-users me-2"></i>ظرفیت: نامحدود</span>
+</div>
+<p class="event-description">
+برنامه هفتگی دوچرخه‌سواری برای ترویج حمل‌ونقل پاک و کاهش استفاده از خودرو
+</p>
+<span class="event-status status-upcoming">رایگان</span>
+</div>
+</div>
+
+<!-- Event 3 -->
+<div class="event-card" data-aos="fade-up" data-aos-delay="200" data-bs-toggle="modal" data-bs-target="#eventModal3">
+<div class="event-date">
+<div class="day">۱۵</div>
+<div class="month">دی</div>
+<div class="year">۱۴۰۲</div>
+</div>
+<div class="event-content">
+<h3 class="event-title">همایش ملی هوای پاک</h3>
+<div class="event-meta">
+<span><i class="fas fa-clock me-2"></i>۹:۰۰ - ۱۷:۰۰</span>
+<span><i class="fas fa-map-marker-alt me-2"></i>مرکز همایش‌های بین‌المللی</span>
+<span><i class="fas fa-users me-2"></i>ظرفیت: ۳۰۰ نفر</span>
+</div>
+<p class="event-description">
+گردهمایی بزرگ فعالان محیط زیست با حضور سخنرانان برجسته داخلی و بین‌المللی
+</p>
+<span class="event-status status-upcoming">ثبت‌نام زودهنگام</span>
+</div>
+</div>
+
+<!-- Event 4 -->
+<div class="event-card" data-aos="fade-up" data-aos-delay="300" data-bs-toggle="modal" data-bs-target="#eventModal4">
+<div class="event-date">
+<div class="day">۲۳</div>
+<div class="month">دی</div>
+<div class="year">۱۴۰۲</div>
+</div>
+<div class="event-content">
+<h3 class="event-title">کارگاه نصب پنل خورشیدی</h3>
+<div class="event-meta">
+<span><i class="fas fa-clock me-2"></i>۱۴:۰۰ - ۱۸:۰۰</span>
+<span><i class="fas fa-map-marker-alt me-2"></i>مرکز آموزش فنی</span>
+<span><i class="fas fa-users me-2"></i>ظرفیت: ۳۰ نفر</span>
+</div>
+<p class="event-description">
+آموزش عملی نصب و راه‌اندازی سیستم‌های خورشیدی خانگی با ارائه گواهینامه
+</p>
+<span class="event-status status-upcoming">۲۰ صندلی باقی‌مانده</span>
+</div>
+</div>
+</div>
+
+<!-- Past Events -->
+<div id="past-events" class="event-list" style="display: none;">
+<!-- Past Event 1 -->
+<div class="event-card past-event" data-aos="fade-up">
+<div class="event-date">
+<div class="day">۱۰</div>
+<div class="month">آذر</div>
+<div class="year">۱۴۰۲</div>
+</div>
+<div class="event-content">
+<h3 class="event-title">سمینار بازیافت و تفکیک زباله</h3>
+<div class="event-meta">
+<span><i class="fas fa-clock me-2"></i>۱۶:۰۰ - ۱۸:۰۰</span>
+<span><i class="fas fa-map-marker-alt me-2"></i>دانشگاه تهران</span>
+<span><i class="fas fa-users me-2"></i>شرکت‌کنندگان: ۱۲۰ نفر</span>
+</div>
+<p class="event-description">
+سمینار آموزشی با موضوع اهمیت تفکیک زباله از مبدأ و روش‌های صحیح بازیافت
+</p>
+<span class="event-status status-completed">برگزار شد</span>
+</div>
+</div>
+
+<!-- Past Event 2 -->
+<div class="event-card past-event" data-aos="fade-up" data-aos-delay="100">
+<div class="event-date">
+<div class="day">۵</div>
+<div class="month">آذر</div>
+<div class="year">۱۴۰۲</div>
+</div>
+<div class="event-content">
+<h3 class="event-title">کمپین کاشت درخت</h3>
+<div class="event-meta">
+<span><i class="fas fa-clock me-2"></i>۸:۰۰ - ۱۲:۰۰</span>
+<span><i class="fas fa-map-marker-alt me-2"></i>پارک چیتگر</span>
+<span><i class="fas fa-users me-2"></i>شرکت‌کنندگان: ۲۰۰ نفر</span>
+</div>
+<p class="event-description">
+کاشت ۵۰۰ اصله نهال با مشارکت داوطلبان و شهروندان علاقه‌مند
+</p>
+<span class="event-status status-completed">برگزار شد</span>
+</div>
+</div>
+
+<!-- Past Event 3 -->
+<div class="event-card past-event" data-aos="fade-up" data-aos-delay="200">
+<div class="event-date">
+<div class="day">۲۸</div>
+<div class="month">آبان</div>
+<div class="year">۱۴۰۲</div>
+</div>
+<div class="event-content">
+<h3 class="event-title">نمایشگاه انرژی‌های تجدیدپذیر</h3>
+<div class="event-meta">
+<span><i class="fas fa-clock me-2"></i>۱۰:۰۰ - ۱۸:۰۰</span>
+<span><i class="fas fa-map-marker-alt me-2"></i>نمایشگاه بین‌المللی</span>
+<span><i class="fas fa-users me-2"></i>بازدیدکنندگان: ۵۰۰۰ نفر</span>
+</div>
+<p class="event-description">
+نمایش آخرین دستاوردها و فناوری‌های نوین در حوزه انرژی‌های پاک
+</p>
+<span class="event-status status-completed">برگزار شد</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Calendar View Section -->
+<section class="py-5 bg-light">
+<div class="container">
+<h2 class="text-center mb-4" data-aos="fade-up">تقویم ماهانه رویدادها</h2>
+<div class="calendar-section" data-aos="fade-up">
+<div class="calendar-header">
+<button class="btn btn-outline-primary"><i class="fas fa-chevron-right"></i></button>
+<h4>آذر ۱۴۰۲</h4>
+<button class="btn btn-outline-primary"><i class="fas fa-chevron-left"></i></button>
+</div>
+<div class="calendar-grid">
+<!-- Days of week -->
+<div class="text-center fw-bold">شنبه</div>
+<div class="text-center fw-bold">یکشنبه</div>
+<div class="text-center fw-bold">دوشنبه</div>
+<div class="text-center fw-bold">سه‌شنبه</div>
+<div class="text-center fw-bold">چهارشنبه</div>
+<div class="text-center fw-bold">پنجشنبه</div>
+<div class="text-center fw-bold">جمعه</div>
+
+<!-- Calendar days -->
+<div class="calendar-day">۱</div>
+<div class="calendar-day">۲</div>
+<div class="calendar-day">۳</div>
+<div class="calendar-day">۴</div>
+<div class="calendar-day has-event">۵</div>
+<div class="calendar-day">۶</div>
+<div class="calendar-day">۷</div>
+<div class="calendar-day">۸</div>
+<div class="calendar-day">۹</div>
+<div class="calendar-day has-event">۱۰</div>
+<div class="calendar-day">۱۱</div>
+<div class="calendar-day">۱۲</div>
+<div class="calendar-day">۱۳</div>
+<div class="calendar-day">۱۴</div>
+<div class="calendar-day">۱۵</div>
+<div class="calendar-day">۱۶</div>
+<div class="calendar-day">۱۷</div>
+<div class="calendar-day">۱۸</div>
+<div class="calendar-day">۱۹</div>
+<div class="calendar-day">۲۰</div>
+<div class="calendar-day">۲۱</div>
+<div class="calendar-day">۲۲</div>
+<div class="calendar-day">۲۳</div>
+<div class="calendar-day">۲۴</div>
+<div class="calendar-day has-event">۲۵</div>
+<div class="calendar-day">۲۶</div>
+<div class="calendar-day">۲۷</div>
+<div class="calendar-day">۲۸</div>
+<div class="calendar-day">۲۹</div>
+<div class="calendar-day">۳۰</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Event Modals -->
+<!-- Modal 1 -->
+<div class="modal fade event-modal" id="eventModal1" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">کارگاه آموزشی کاهش آلودگی هوا</h5>
+<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="https://source.unsplash.com/800x400/?workshop,education" alt="کارگاه آموزشی" class="event-image">
+
+<div class="detail-item">
+<i class="fas fa-calendar-alt"></i>
+<div>
+<strong>تاریخ:</strong> پنجشنبه ۲۵ آذر ۱۴۰۲
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-clock"></i>
+<div>
+<strong>ساعت:</strong> ۱۰:۰۰ صبح الی ۱:۰۰ بعد از ظهر
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-map-marker-alt"></i>
+<div>
+<strong>مکان:</strong> سالن همایش بنیاد آسمان آبی - تهران، خیابان ولیعصر، پلاک ۱۲۳
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-user-tie"></i>
+<div>
+<strong>مدرس:</strong> دکتر سارا احمدی - متخصص محیط زیست
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-users"></i>
+<div>
+<strong>ظرفیت:</strong> ۵۰ نفر (۳۵ نفر ثبت‌نام کرده‌اند)
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-dollar-sign"></i>
+<div>
+<strong>هزینه:</strong> رایگان برای اعضای بنیاد / ۵۰,۰۰۰ تومان برای عموم
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-list"></i>
+<div>
+<strong>شرایط حضور:</strong>
+<ul>
+<li>حداقل سن ۱۸ سال</li>
+<li>علاقه‌مندی به موضوعات محیط زیست</li>
+<li>ثبت‌نام قبلی الزامی است</li>
+<li>ارائه کارت شناسایی معتبر</li>
+</ul>
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-info-circle"></i>
+<div>
+<strong>توضیحات:</strong>
+<p>در این کارگاه، روش‌های عملی و کاربردی برای کاهش آلودگی هوا در محیط خانه و محل کار آموزش داده می‌شود. شرکت‌کنندگان با انواع آلاینده‌ها، منابع آلودگی و راهکارهای کاهش آن‌ها آشنا خواهند شد.</p>
+</div>
+</div>
+
+<div class="text-center mt-4">
+<button class="btn btn-register btn-lg">
+<i class="fas fa-check-circle me-2"></i>ثبت‌نام در رویداد
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal 2 -->
+<div class="modal fade event-modal" id="eventModal2" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">دوچرخه‌سواری پنجشنبه‌های سبز</h5>
+<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="https://source.unsplash.com/800x400/?cycling,park" alt="دوچرخه‌سواری" class="event-image">
+
+<div class="detail-item">
+<i class="fas fa-calendar-alt"></i>
+<div>
+<strong>تاریخ:</strong> هر پنجشنبه - شروع از ۲ دی ۱۴۰۲
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-clock"></i>
+<div>
+<strong>ساعت:</strong> ۷:۰۰ صبح الی ۹:۰۰ صبح
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-map-marker-alt"></i>
+<div>
+<strong>مکان شروع:</strong> ورودی اصلی پارک ملت
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-route"></i>
+<div>
+<strong>مسیر:</strong> پارک ملت - بلوار کشاورز - پارک لاله - میدان انقلاب
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-users"></i>
+<div>
+<strong>ظرفیت:</strong> نامحدود - پیوستن آزاد برای همه
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-dollar-sign"></i>
+<div>
+<strong>هزینه:</strong> رایگان
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-list"></i>
+<div>
+<strong>شرایط حضور:</strong>
+<ul>
+<li>داشتن دوچرخه سالم و ایمن</li>
+<li>استفاده از کلاه ایمنی (اجباری)</li>
+<li>رعایت قوانین راهنمایی و رانندگی</li>
+<li>همراه داشتن آب آشامیدنی</li>
+</ul>
+</div>
+</div>
+
+<div class="text-center mt-4">
+<button class="btn btn-register btn-lg">
+<i class="fas fa-bicycle me-2"></i>اعلام حضور
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal 3 -->
+<div class="modal fade event-modal" id="eventModal3" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">همایش ملی هوای پاک</h5>
+<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="https://source.unsplash.com/800x400/?conference,environment" alt="همایش" class="event-image">
+
+<div class="detail-item">
+<i class="fas fa-calendar-alt"></i>
+<div>
+<strong>تاریخ:</strong> ۱۵ دی ۱۴۰۲
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-clock"></i>
+<div>
+<strong>ساعت:</strong> ۹:۰۰ صبح الی ۵:۰۰ بعد از ظهر
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-map-marker-alt"></i>
+<div>
+<strong>مکان:</strong> مرکز همایش‌های بین‌المللی تهران
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-microphone"></i>
+<div>
+<strong>سخنرانان کلیدی:</strong>
+<ul>
+<li>دکتر محمد رضایی - رئیس سازمان محیط زیست</li>
+<li>پروفسور جان اسمیت - متخصص بین‌المللی کیفیت هوا</li>
+<li>مهندس لیلا کریمی - مدیر پروژه‌های انرژی پاک</li>
+</ul>
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-users"></i>
+<div>
+<strong>ظرفیت:</strong> ۳۰۰ نفر (۱۸۰ نفر ثبت‌نام کرده‌اند)
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-dollar-sign"></i>
+<div>
+<strong>هزینه ثبت‌نام:</strong>
+<ul>
+<li>عادی: ۳۰۰,۰۰۰ تومان</li>
+<li>دانشجویان: ۱۵۰,۰۰۰ تومان</li>
+<li>اعضای بنیاد: ۲۰۰,۰۰۰ تومان</li>
+</ul>
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-gift"></i>
+<div>
+<strong>امکانات:</strong>
+<ul>
+<li>پذیرایی و ناهار</li>
+<li>بسته همایش شامل کتاب و لوازم‌التحریر</li>
+<li>گواهی حضور معتبر</li>
+<li>دسترسی به مقالات و ارائه‌ها</li>
+</ul>
+</div>
+</div>
+
+<div class="text-center mt-4">
+<button class="btn btn-register btn-lg">
+<i class="fas fa-ticket-alt me-2"></i>رزرو بلیت
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal 4 -->
+<div class="modal fade event-modal" id="eventModal4" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">کارگاه نصب پنل خورشیدی</h5>
+<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<img src="https://source.unsplash.com/800x400/?solar,workshop" alt="کارگاه پنل خورشیدی" class="event-image">
+
+<div class="detail-item">
+<i class="fas fa-calendar-alt"></i>
+<div>
+<strong>تاریخ:</strong> ۲۳ دی ۱۴۰۲
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-clock"></i>
+<div>
+<strong>ساعت:</strong> ۲:۰۰ بعد از ظهر الی ۶:۰۰ عصر
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-map-marker-alt"></i>
+<div>
+<strong>مکان:</strong> مرکز آموزش فنی بنیاد - کرج، جاده مخصوص
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-chalkboard-teacher"></i>
+<div>
+<strong>مدرس:</strong> مهندس رضا کریمی - متخصص انرژی‌های تجدیدپذیر
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-book"></i>
+<div>
+<strong>سرفصل‌های آموزشی:</strong>
+<ul>
+<li>آشنایی با انواع پنل‌های خورشیدی</li>
+<li>محاسبه ظرفیت مورد نیاز</li>
+<li>نصب عملی پنل و اینورتر</li>
+<li>اتصالات الکتریکی و ایمنی</li>
+<li>نگهداری و عیب‌یابی</li>
+</ul>
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-certificate"></i>
+<div>
+<strong>گواهینامه:</strong> گواهی معتبر از سازمان فنی و حرفه‌ای
+</div>
+</div>
+
+<div class="detail-item">
+<i class="fas fa-dollar-sign"></i>
+<div>
+<strong>هزینه:</strong> ۵۰۰,۰۰۰ تومان (شامل مواد آموزشی و پذیرایی)
+</div>
+</div>
+
+<div class="text-center mt-4">
+<button class="btn btn-register btn-lg">
+<i class="fas fa-solar-panel me-2"></i>ثبت‌نام در کارگاه
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-md-4 mb-4">
+<h5 class="mb-3">درباره بنیاد آسمان آبی</h5>
+<p>ما گروهی از دوستداران محیط زیست هستیم که برای داشتن هوای پاک و آسمان آبی تلاش می‌کنیم.</p>
+<div class="mt-3">
+<a href="#" class="text-white me-3"><i class="fab fa-facebook fa-2x"></i></a>
+<a href="#" class="text-white me-3"><i class="fab fa-twitter fa-2x"></i></a>
+<a href="#" class="text-white me-3"><i class="fab fa-instagram fa-2x"></i></a>
+<a href="#" class="text-white"><i class="fab fa-telegram fa-2x"></i></a>
+</div>
+</div>
+<div class="col-md-4 mb-4">
+<h5 class="mb-3">دسترسی سریع</h5>
+<ul class="list-unstyled footer-links">
+<li class="mb-2"><a href="index.html"><i class="fas fa-angle-left me-2"></i>صفحه اصلی</a></li>
+<li class="mb-2"><a href="about.html"><i class="fas fa-angle-left me-2"></i>درباره ما</a></li>
+<li class="mb-2"><a href="team.html"><i class="fas fa-angle-left me-2"></i>تیم ما</a></li>
+<li class="mb-2"><a href="membership.html"><i class="fas fa-angle-left me-2"></i>عضویت در بنیاد</a></li>
+</ul>
+</div>
+<div class="col-md-4 mb-4">
+<h5 class="mb-3">تماس با ما</h5>
+<p class="mb-1"><i class="fas fa-phone me-2"></i>021-12345678</p>
+<p class="mb-1"><i class="fas fa-envelope me-2"></i>info@asemanabi.org</p>
+<p><i class="fas fa-map-marker-alt me-2"></i>تهران، خیابان ولیعصر، پلاک ۱۲۳</p>
+</div>
+</div>
+<hr class="bg-white">
+<div class="text-center py-3">
+<p class="mb-0">© ۱۴۰۲ بنیاد آسمان آبی - تمامی حقوق محفوظ است</p>
+</div>
+</div>
+</footer>
+
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Inline Scripts -->
+<script>
+// Initialize AOS
+AOS.init({
+duration: 1000,
+once: true
+});
+
+// Tab Switching
+const tabs = document.querySelectorAll('.event-tab');
+const upcomingEvents = document.getElementById('upcoming-events');
+const pastEvents = document.getElementById('past-events');
+
+tabs.forEach(tab => {
+tab.addEventListener('click', () => {
+// Remove active class from all tabs
+tabs.forEach(t => t.classList.remove('active'));
+// Add active class to clicked tab
+tab.classList.add('active');
+
+const tabType = tab.getAttribute('data-tab');
+
+if (tabType === 'upcoming') {
+upcomingEvents.style.display = 'block';
+pastEvents.style.display = 'none';
+} else if (tabType === 'past') {
+upcomingEvents.style.display = 'none';
+pastEvents.style.display = 'block';
+} else if (tabType === 'all') {
+upcomingEvents.style.display = 'block';
+pastEvents.style.display = 'block';
+}
+});
+});
+
+
+// Register Button Click Handler
+document.querySelectorAll('.btn-register').forEach(btn => {
+btn.addEventListener('click', function() {
+alert('سیستم ثبت‌نام در حال حاضر غیرفعال است. لطفاً از طریق تماس تلفنی اقدام کنید.');
+});
+});
+</script>
+</body>
+</html>

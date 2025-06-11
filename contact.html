@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تماس با ما - بنیاد آسمان آبی</title>
+
+<!-- Bootstrap 5 RTL -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- AOS Animation -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Inline Styles -->
+<style>
+:root {
+--primary-color: #2196F3;
+--secondary-color: #87CEEB;
+--dark-color: #1a1a1a;
+--light-bg: #f8f9fa;
+--success-color: #28a745;
+--accent-color: #FFC107;
+}
+
+body {
+font-family: 'Vazir', Arial, sans-serif;
+line-height: 1.8;
+}
+
+/* Header Styles */
+.header-top {
+background-color: var(--primary-color);
+color: white;
+padding: 10px 0;
+}
+
+.navbar {
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand img {
+height: 50px;
+}
+
+/* Page Header */
+.page-header {
+background: linear-gradient(rgba(33, 150, 243, 0.8), rgba(33, 150, 243, 0.8)), url('https://source.unsplash.com/1920x400/?office,contact') center/cover;
+padding: 100px 0 50px;
+color: white;
+text-align: center;
+}
+
+/* Map Section */
+#map {
+height: 500px;
+width: 100%;
+border-radius: 15px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.map-overlay {
+position: absolute;
+top: 20px;
+right: 20px;
+z-index: 1000;
+background: white;
+padding: 15px;
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Contact Cards */
+.contact-card {
+background: white;
+padding: 40px;
+border-radius: 20px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+text-align: center;
+height: 100%;
+transition: all 0.3s;
+position: relative;
+overflow: hidden;
+}
+
+.contact-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 5px;
+background: var(--primary-color);
+transition: height 0.3s;
+}
+
+.contact-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.contact-card:hover::before {
+height: 10px;
+}
+
+.contact-icon {
+width: 80px;
+height: 80px;
+background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+color: white;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 36px;
+margin: 0 auto 25px;
+position: relative;
+}
+
+.contact-icon::after {
+content: '';
+position: absolute;
+width: 100%;
+height: 100%;
+border-radius: 50%;
+background: var(--primary-color);
+opacity: 0.3;
+animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+0% {
+transform: scale(1);
+opacity: 0.3;
+}
+50% {
+transform: scale(1.3);
+opacity: 0;
+}
+100% {
+transform: scale(1);
+opacity: 0.3;
+}
+}
+
+/* Branch Cards */
+.branch-card {
+background: white;
+border: 2px solid #e0e0e0;
+border-radius: 15px;
+padding: 30px;
+margin-bottom: 20px;
+transition: all 0.3s;
+}
+
+.branch-card:hover {
+border-color: var(--primary-color);
+box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.branch-badge {
+background: var(--primary-color);
+color: white;
+padding: 5px 15px;
+border-radius: 20px;
+display: inline-block;
+font-size: 14px;
+margin-bottom: 15px;
+}
+
+/* Working Hours */
+.working-hours {
+background: var(--light-bg);
+padding: 40px;
+border-radius: 15px;
+}
+
+.working-hours-item {
+display: flex;
+justify-content: space-between;
+padding: 15px 0;
+border-bottom: 1px solid #e0e0e0;
+}
+
+.working-hours-item:last-child {
+border-bottom: none;
+}
+
+.working-hours-item.today {
+font-weight: bold;
+color: var(--primary-color);
+}
+
+.status-badge {
+padding: 3px 10px;
+border-radius: 15px;
+font-size: 12px;
+}
+
+.status-open {
+background: #e8f5e9;
+color: var(--success-color);
+}
+
+.status-closed {
+background: #ffebee;
+color: #dc3545;
+}
+
+/* Social Links */
+.social-links {
+margin-top: 30px;
+}
+
+.social-link {
+display: inline-block;
+width: 45px;
+height: 45px;
+background: #f5f5f5;
+color: #666;
+border-radius: 50%;
+line-height: 45px;
+text-align: center;
+margin: 0 5px;
+transition: all 0.3s;
+}
+
+.social-link:hover {
+background: var(--primary-color);
+color: white;
+transform: translateY(-3px);
+}
+
+/* Quick Message */
+.quick-message {
+background: white;
+padding: 30px;
+border-radius: 15px;
+box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Emergency Contact */
+.emergency-contact {
+background: linear-gradient(135deg, #ff6b6b, #feca57);
+color: white;
+padding: 30px;
+border-radius: 15px;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.emergency-contact h3 {
+margin-bottom: 15px;
+}
+
+.emergency-contact .phone-number {
+font-size: 28px;
+font-weight: bold;
+letter-spacing: 2px;
+}
+
+/* Directions Button */
+.directions-btn {
+background: var(--primary-color);
+color: white;
+padding: 12px 30px;
+border-radius: 30px;
+text-decoration: none;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+transition: all 0.3s;
+}
+
+.directions-btn:hover {
+background: #1976D2;
+color: white;
+transform: translateY(-2px);
+box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+}
+
+/* FAQ Style */
+.faq-item {
+background: white;
+padding: 20px;
+border-radius: 10px;
+margin-bottom: 15px;
+border: 1px solid #e0e0e0;
+transition: all 0.3s;
+}
+
+.faq-item:hover {
+border-color: var(--primary-color);
+box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+background: var(--dark-color);
+color: white;
+padding: 40px 0 20px;
+}
+
+.footer-links a {
+color: white;
+text-decoration: none;
+transition: color 0.3s;
+}
+
+.footer-links a:hover {
+color: var(--secondary-color);
+}
+
+
+
+/* Chat Widget */
+.chat-widget {
+position: fixed;
+bottom: 80px;
+left: 20px;
+z-index: 999;
+}
+
+.chat-button {
+background: var(--success-color);
+color: white;
+width: 60px;
+height: 60px;
+border-radius: 50%;
+border: none;
+box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.chat-button:hover {
+transform: scale(1.1);
+}
+
+.chat-popup {
+position: absolute;
+bottom: 70px;
+left: 0;
+background: white;
+border-radius: 15px;
+box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+width: 300px;
+padding: 20px;
+display: none;
+}
+
+.chat-popup.show {
+display: block;
+animation: slideUp 0.3s;
+}
+
+@keyframes slideUp {
+from {
+transform: translateY(20px);
+opacity: 0;
+}
+to {
+transform: translateY(0);
+opacity: 1;
+}
+}
+</style>
+</head>
+<body>
+<!-- Header Top -->
+<div class="header-top">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-md-6">
+<small>
+<i class="fas fa-phone me-2"></i> 021-12345678
+<span class="mx-3">|</span>
+<i class="fas fa-envelope me-2"></i> info@asemanabi.org
+</small>
+</div>
+<div class="col-md-6 text-end">
+<a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+<a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+<a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+<a href="#" class="text-white"><i class="fab fa-telegram"></i></a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+<div class="container">
+<a class="navbar-brand" href="index.html">
+<img src="images/logo.png" alt="آسمان آبی">
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item">
+<a class="nav-link" href="index.html">صفحه اصلی</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="about.html">درباره ما</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="team.html">تیم ما</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="calendar.html">تقویم رویدادها</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="membership.html">عضویت</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="feedback.html">ارتباط با ما</a>
+</li>
+<li class="nav-item">
+<a class="nav-link active" href="contact.html">تماس</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- Page Header -->
+<div class="page-header">
+<div class="container">
+<h1 class="display-4 fw-bold" data-aos="fade-up">تماس با ما</h1>
+<p class="lead" data-aos="fade-up" data-aos-delay="100">ما همیشه آماده شنیدن صدای شما هستیم</p>
+</div>
+</div>
+
+<!-- Emergency Contact -->
+<section class="py-5">
+<div class="container">
+<div class="emergency-contact" data-aos="fade-up">
+<h3><i class="fas fa-phone-volume me-2"></i>خط ارتباط مستقیم</h3>
+<div class="phone-number">021-12345678</div>
+<small>پاسخگویی ۲۴ ساعته در موارد اضطراری</small>
+</div>
+</div>
+</section>
+
+<!-- Contact Info Cards -->
+<section class="py-5 bg-light">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 mb-4" data-aos="fade-up">
+<div class="contact-card">
+<div class="contact-icon">
+<i class="fas fa-map-marker-alt"></i>
+</div>
+<h3>آدرس دفتر مرکزی</h3>
+<p>تهران، خیابان ولیعصر، بالاتر از میدان ونک، پلاک ۱۲۳</p>
+<p class="text-muted mb-0">کدپستی: ۱۹۶۸۷۴۳۲۱۰</p>
+<a href="#map" class="directions-btn mt-3">
+<i class="fas fa-directions"></i>
+مسیریابی
+</a>
+</div>
+</div>
+<div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+<div class="contact-card">
+<div class="contact-icon">
+<i class="fas fa-phone-alt"></i>
+</div>
+<h3>شماره‌های تماس</h3>
+<p class="mb-2"><strong>دفتر مرکزی:</strong> 021-12345678</p>
+<p class="mb-2"><strong>واحد عضویت:</strong> 021-12345679</p>
+<p class="mb-2"><strong>روابط عمومی:</strong> 021-12345680</p>
+<p class="mb-0"><strong>فکس:</strong> 021-12345681</p>
+</div>
+</div>
+<div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+<div class="contact-card">
+<div class="contact-icon">
+<i class="fas fa-envelope"></i>
+</div>
+<h3>پست الکترونیکی</h3>
+<p class="mb-2"><strong>عمومی:</strong> info@asemanabi.org</p>
+<p class="mb-2"><strong>پشتیبانی:</strong> support@asemanabi.org</p>
+<p class="mb-2"><strong>عضویت:</strong> member@asemanabi.org</p>
+<p class="mb-0"><strong>رسانه:</strong> media@asemanabi.org</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Map Section -->
+<section class="py-5">
+<div class="container">
+<h2 class="text-center mb-5" data-aos="fade-up">موقعیت ما روی نقشه</h2>
+<div class="position-relative" data-aos="fade-up">
+<div id="map"></div>
+<div class="map-overlay">
+<h5 class="mb-2">بنیاد آسمان آبی</h5>
+<p class="mb-0 small">کلیک کنید برای مسیریابی</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Branches Section -->
+<section class="py-5 bg-light">
+<div class="container">
+<h2 class="text-center mb-5" data-aos="fade-up">شعبه‌های ما در سراسر کشور</h2>
+<div class="row">
+<div class="col-md-6 col-lg-4" data-aos="fade-up">
+<div class="branch-card">
+<span class="branch-badge">شعبه شمال</span>
+<h4>رشت</h4>
+<p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>بلوار نامجو، ساختمان سبز</p>
+<p class="text-muted mb-2"><i class="fas fa-phone me-2"></i>013-33123456</p>
+<p class="text-muted mb-0"><i class="fas fa-envelope me-2"></i>rasht@asemanabi.org</p>
+</div>
+</div>
+<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+<div class="branch-card">
+<span class="branch-badge">شعبه جنوب</span>
+<h4>شیراز</h4>
+<p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>خیابان زند، پلاک ۴۵</p>
+<p class="text-muted mb-2"><i class="fas fa-phone me-2"></i>071-32123456</p>
+<p class="text-muted mb-0"><i class="fas fa-envelope me-2"></i>shiraz@asemanabi.org</p>
+</div>
+</div>
+<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+<div class="branch-card">
+<span class="branch-badge">شعبه شرق</span>
+<h4>مشهد</h4>
+<p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>بلوار وکیل‌آباد، برج آسمان</p>
+<p class="text-muted mb-2"><i class="fas fa-phone me-2"></i>051-38123456</p>
+<p class="text-muted mb-0"><i class="fas fa-envelope me-2"></i>mashhad@asemanabi.org</p>
+</div>
+</div>
+<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+<div class="branch-card">
+<span class="branch-badge">شعبه غرب</span>
+<h4>کرمانشاه</h4>
+<p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>بلوار شهید بهشتی</p>
+<p class="text-muted mb-2"><i class="fas fa-phone me-2"></i>083-37123456</p>
+<p class="text-muted mb-0"><i class="fas fa-envelope me-2"></i>kermanshah@asemanabi.org</p>
+</div>
+</div>
+<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+<div class="branch-card">
+<span class="branch-badge">شعبه مرکز</span>
+<h4>اصفهان</h4>
+<p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>خیابان چهارباغ بالا</p>
+<p class="text-muted mb-2"><i class="fas fa-phone me-2"></i>031-32123456</p>
+<p class="text-muted mb-0"><i class="fas fa-envelope me-2"></i>isfahan@asemanabi.org</p>
+</div>
+</div>
+<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+<div class="branch-card">
+<span class="branch-badge">شعبه جزایر</span>
+<h4>کیش</h4>
+<p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>میدان ساحل، مجتمع پارس</p>
+<p class="text-muted mb-2"><i class="fas fa-phone me-2"></i>076-44123456</p>
+<p class="text-muted mb-0"><i class="fas fa-envelope me-2"></i>kish@asemanabi.org</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Working Hours & Quick Message -->
+<section class="py-5">
+<div class="container">
+<div class="row">
+<div class="col-lg-6 mb-4">
+<div class="working-hours" data-aos="fade-up">
+<h3 class="mb-4"><i class="fas fa-clock me-2"></i>ساعات کاری</h3>
+<div class="working-hours-item today">
+<span>شنبه</span>
+<span>۹:۰۰ - ۱۷:۰۰ <span class="status-badge status-open">باز</span></span>
+</div>
+<div class="working-hours-item">
+<span>یکشنبه</span>
+<span>۹:۰۰ - ۱۷:۰۰</span>
+</div>
+<div class="working-hours-item">
+<span>دوشنبه</span>
+<span>۹:۰۰ - ۱۷:۰۰</span>
+</div>
+<div class="working-hours-item">
+<span>سه‌شنبه</span>
+<span>۹:۰۰ - ۱۷:۰۰</span>
+</div>
+<div class="working-hours-item">
+<span>چهارشنبه</span>
+<span>۹:۰۰ - ۱۷:۰۰</span>
+</div>
+<div class="working-hours-item">
+<span>پنجشنبه</span>
+<span>۹:۰۰ - ۱۴:۰۰</span>
+</div>
+<div class="working-hours-item">
+<span>جمعه</span>
+<span>تعطیل <span class="status-badge status-closed">بسته</span></span>
+</div>
+<p class="text-muted mt-3 mb-0">
+<i class="fas fa-info-circle me-2"></i>
+در روزهای تعطیل رسمی دفتر تعطیل می‌باشد
+</p>
+</div>
+</div>
+<div class="col-lg-6 mb-4">
+<div class="quick-message" data-aos="fade-up" data-aos-delay="100">
+<h3 class="mb-4"><i class="fas fa-comment-dots me-2"></i>پیام سریع</h3>
+<form id="quickMessageForm">
+<div class="mb-3">
+<label for="quickName" class="form-label">نام شما</label>
+<input type="text" class="form-control" id="quickName" required>
+</div>
+<div class="mb-3">
+<label for="quickPhone" class="form-label">شماره تماس</label>
+<input type="tel" class="form-control" id="quickPhone" required>
+</div>
+<div class="mb-3">
+<label for="quickMessage" class="form-label">پیام</label>
+<textarea class="form-control" id="quickMessage" rows="4" required></textarea>
+</div>
+<button type="submit" class="btn btn-primary">
+<i class="fas fa-paper-plane me-2"></i>ارسال پیام
+</button>
+</form>
+<div id="quickMessageSuccess" class="alert alert-success mt-3" style="display: none;">
+<i class="fas fa-check-circle me-2"></i>
+پیام شما ارسال شد. به زودی با شما تماس خواهیم گرفت.
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5 bg-light">
+<div class="container">
+<h2 class="text-center mb-5" data-aos="fade-up">سؤالات متداول درباره تماس</h2>
+<div class="row">
+<div class="col-lg-8 mx-auto">
+<div class="faq-item" data-aos="fade-up">
+<h5><i class="fas fa-question-circle text-primary me-2"></i>بهترین زمان برای تماس تلفنی چه زمانی است؟</h5>
+<p class="mb-0 text-muted">بهترین زمان برای تماس در ساعات اداری از ۹ صبح تا ۱۲ ظهر است. در این ساعات کمترین ترافیک تماس را داریم.</p>
+</div>
+<div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+<h5><i class="fas fa-question-circle text-primary me-2"></i>آیا امکان بازدید حضوری از دفتر وجود دارد؟</h5>
+<p class="mb-0 text-muted">بله، شما می‌توانید در ساعات اداری به دفتر مرکزی ما مراجعه کنید. برای هماهنگی بهتر، پیشنهاد می‌کنیم قبل از مراجعه تماس بگیرید.</p>
+</div>
+<div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+<h5><i class="fas fa-question-circle text-primary me-2"></i>پارکینگ در دفتر مرکزی موجود است؟</h5>
+<p class="mb-0 text-muted">بله، پارکینگ رایگان برای مراجعین در ساختمان موجود است. همچنین پارکینگ عمومی در نزدیکی دفتر قرار دارد.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Social Media & Newsletter -->
+<section class="py-5">
+<div class="container text-center">
+<h3 class="mb-4" data-aos="fade-up">ما را در شبکه‌های اجتماعی دنبال کنید</h3>
+<div class="social-links" data-aos="fade-up" data-aos-delay="100">
+<a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+<a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+<a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+<a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+<a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+<a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+<a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+</div>
+</div>
+</section>
+
+<!-- Chat Widget -->
+<div class="chat-widget">
+<button class="chat-button" id="chatButton">
+<i class="fas fa-comments"></i>
+</button>
+<div class="chat-popup" id="chatPopup">
+<h5 class="mb-3">گفتگوی آنلاین</h5>
+<p class="text-muted">سلام! چطور می‌توانیم کمکتان کنیم؟</p>
+<button class="btn btn-success btn-sm w-100">شروع گفتگو</button>
+</div>
+</div>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-md-4 mb-4">
+<h5 class="mb-3">درباره بنیاد آسمان آبی</h5>
+<p>ما گروهی از دوستداران محیط زیست هستیم که برای داشتن هوای پاک و آسمان آبی تلاش می‌کنیم.</p>
+<div class="mt-3">
+<a href="#" class="text-white me-3"><i class="fab fa-facebook fa-2x"></i></a>
+<a href="#" class="text-white me-3"><i class="fab fa-twitter fa-2x"></i></a>
+<a href="#" class="text-white me-3"><i class="fab fa-instagram fa-2x"></i></a>
+<a href="#" class="text-white"><i class="fab fa-telegram fa-2x"></i></a>
+</div>
+</div>
+<div class="col-md-4 mb-4">
+<h5 class="mb-3">دسترسی سریع</h5>
+<ul class="list-unstyled footer-links">
+<li class="mb-2"><a href="index.html"><i class="fas fa-angle-left me-2"></i>صفحه اصلی</a></li>
+<li class="mb-2"><a href="about.html"><i class="fas fa-angle-left me-2"></i>درباره ما</a></li>
+<li class="mb-2"><a href="team.html"><i class="fas fa-angle-left me-2"></i>تیم ما</a></li>
+<li class="mb-2"><a href="calendar.html"><i class="fas fa-angle-left me-2"></i>تقویم رویدادها</a></li>
+</ul>
+</div>
+<div class="col-md-4 mb-4">
+<h5 class="mb-3">تماس با ما</h5>
+<p class="mb-1"><i class="fas fa-phone me-2"></i>021-12345678</p>
+<p class="mb-1"><i class="fas fa-envelope me-2"></i>info@asemanabi.org</p>
+<p><i class="fas fa-map-marker-alt me-2"></i>تهران، خیابان ولیعصر، پلاک ۱۲۳</p>
+</div>
+</div>
+<hr class="bg-white">
+<div class="text-center py-3">
+<p class="mb-0">© ۱۴۰۲ بنیاد آسمان آبی - تمامی حقوق محفوظ است</p>
+</div>
+</div>
+</footer>
+
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Inline Scripts -->
+<script>
+// Initialize AOS
+AOS.init({
+duration: 1000,
+once: true
+});
+
+// Initialize Map
+const map = L.map('map').setView([35.7219, 51.3347], 16); // Tehran coordinates
+
+// Add tile layer
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: '© OpenStreetMap contributors',
+maxZoom: 19
+}).addTo(map);
+
+// Custom icon
+const customIcon = L.divIcon({
+html: '<div style="background: #2196F3; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(0,0,0,0.3);"><i class="fas fa-leaf"></i></div>',
+iconSize: [40, 40],
+iconAnchor: [20, 40],
+popupAnchor: [0, -40]
+});
+
+// Add marker
+const marker = L.marker([35.7219, 51.3347], { icon: customIcon }).addTo(map);
+
+// Add popup
+marker.bindPopup(`
+<div style="text-align: center;">
+<h6>بنیاد آسمان آبی</h6>
+<p style="margin: 5px 0;">دفتر مرکزی</p>
+<a href="https://www.google.com/maps/dir/?api=1&destination=35.7219,51.3347" target="_blank" class="btn btn-sm btn-primary">
+<i class="fas fa-directions"></i> مسیریابی
+</a>
+</div>
+`).openPopup();
+
+// Add circle around location
+L.circle([35.7219, 51.3347], {
+color: '#2196F3',
+fillColor: '#2196F3',
+fillOpacity: 0.1,
+radius: 200
+}).addTo(map);
+
+// Quick Message Form
+const quickMessageForm = document.getElementById('quickMessageForm');
+const quickMessageSuccess = document.getElementById('quickMessageSuccess');
+
+quickMessageForm.addEventListener('submit', function(e) {
+e.preventDefault();
+
+// Show loading
+const submitBtn = this.querySelector('button[type="submit"]');
+const originalText = submitBtn.innerHTML;
+submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>در حال ارسال...';
+submitBtn.disabled = true;
+
+// Simulate sending
+setTimeout(() => {
+// Reset form
+this.reset();
+
+// Show success message
+quickMessageSuccess.style.display = 'block';
+
+// Reset button
+submitBtn.innerHTML = originalText;
+submitBtn.disabled = false;
+
+// Hide success message after 5 seconds
+setTimeout(() => {
+quickMessageSuccess.style.display = 'none';
+}, 5000);
+}, 1500);
+});
+
+// Phone number formatting
+document.getElementById('quickPhone').addEventListener('input', function(e) {
+this.value = this.value.replace(/[^0-9]/g, '');
+});
+
+// Chat Widget
+const chatButton = document.getElementById('chatButton');
+const chatPopup = document.getElementById('chatPopup');
+
+chatButton.addEventListener('click', function() {
+chatPopup.classList.toggle('show');
+});
+
+// Close chat popup when clicking outside
+document.addEventListener('click', function(e) {
+if (!chatButton.contains(e.target) && !chatPopup.contains(e.target)) {
+chatPopup.classList.remove('show');
+}
+});
+
+// Get current day for working hours
+const today = new Date().getDay();
+const daysOfWeek = ['یکشنبه', 'دوشنبه', 'سه‌شنبه', 'چهارشنبه', 'پنجشنبه', 'جمعه', 'شنبه'];
+const workingHoursItems = document.querySelectorAll('.working-hours-item');
+
+// Map Persian days to indices
+const persianDayMap = {
+'شنبه': 6,
+'یکشنبه': 0,
+'دوشنبه': 1,
+'سه‌شنبه': 2,
+'چهارشنبه': 3,
+'پنجشنبه': 4,
+'جمعه': 5
+};
+
+// Highlight today
+workingHoursItems.forEach(item => {
+const dayText = item.querySelector('span').textContent;
+if (persianDayMap[dayText] === today) {
+item.classList.add('today');
+}
+});
+
+// Map click to open in Google Maps
+map.on('click', function() {
+window.open('https://www.google.com/maps/dir/?api=1&destination=35.7219,51.3347', '_blank');
+});
+
+// Smooth scroll for directions button
+document.querySelector('.directions-btn').addEventListener('click', function(e) {
+e.preventDefault();
+document.getElementById('map').scrollIntoView({
+behavior: 'smooth',
+block: 'center'
+});
+});
+
+
+// Animate phone number on hover
+const phoneNumbers = document.querySelectorAll('.phone-number');
+phoneNumbers.forEach(phone => {
+phone.addEventListener('mouseenter', function() {
+this.style.transform = 'scale(1.05)';
+});
+phone.addEventListener('mouseleave', function() {
+this.style.transform = 'scale(1)';
+});
+});
+
+// Add ripple effect to buttons
+const buttons = document.querySelectorAll('.btn');
+buttons.forEach(button => {
+button.addEventListener('click', function(e) {
+const ripple = document.createElement('span');
+const rect = this.getBoundingClientRect();
+const size = Math.max(rect.width, rect.height);
+const x = e.clientX - rect.left - size / 2;
+const y = e.clientY - rect.top - size / 2;
+
+ripple.style.width = ripple.style.height = size + 'px';
+ripple.style.left = x + 'px';
+ripple.style.top = y + 'px';
+ripple.classList.add('ripple');
+
+this.appendChild(ripple);
+
+setTimeout(() => {
+ripple.remove();
+}, 600);
+});
+});
+</script>
+
+<!-- Styles for ripple effect -->
+<style>
+.btn {
+position: relative;
+overflow: hidden;
+}
+
+.ripple {
+position: absolute;
+border-radius: 50%;
+background: rgba(255, 255, 255, 0.6);
+transform: scale(0);
+animation: ripple-animation 0.6s ease-out;
+}
+
+@keyframes ripple-animation {
+to {
+transform: scale(4);
+opacity: 0;
+}
+}
+</style>
+</body>
+</html>
