@@ -4,20 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>عضویت در بنیاد - بنیاد آسمان آبی</title>
-
-<!-- Bootstrap 5 RTL -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
-
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<!-- AOS Animation -->
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-
-<!-- Custom CSS -->
 <link rel="stylesheet" href="css/style.css">
-
-<!-- Inline Styles -->
 <style>
 :root {
 --primary-color: #2196F3;
@@ -28,28 +18,23 @@
 --warning-color: #ffc107;
 --danger-color: #dc3545;
 }
-
 body {
 font-family: 'Vazir', Arial, sans-serif;
 line-height: 1.8;
 }
-
 /* Header Styles */
 .header-top {
 background-color: var(--primary-color);
 color: white;
 padding: 10px 0;
 }
-
 .navbar {
 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-
 .navbar-brand img {
 height: 50px;
 }
 
-/* Page Header */
 .page-header {
 background: linear-gradient(rgba(33, 150, 243, 0.8), rgba(33, 150, 243, 0.8)), url('https://source.unsplash.com/1920x400/?community,volunteer') center/cover;
 padding: 100px 0 50px;
@@ -57,7 +42,6 @@ color: white;
 text-align: center;
 }
 
-/* Benefits Section */
 .benefit-card {
 background: white;
 padding: 30px;
@@ -67,12 +51,10 @@ text-align: center;
 height: 100%;
 transition: all 0.3s;
 }
-
 .benefit-card:hover {
 transform: translateY(-10px);
 box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
-
 .benefit-icon {
 width: 80px;
 height: 80px;
@@ -86,55 +68,46 @@ font-size: 36px;
 margin: 0 auto 20px;
 }
 
-/* Membership Form */
 .membership-form {
 background: white;
 padding: 40px;
 border-radius: 20px;
 box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
-
 .form-section {
 margin-bottom: 30px;
 padding-bottom: 30px;
 border-bottom: 2px solid #eee;
 }
-
 .form-section:last-child {
 border-bottom: none;
 margin-bottom: 0;
 padding-bottom: 0;
 }
-
 .form-section h4 {
 color: var(--primary-color);
 margin-bottom: 20px;
 display: flex;
 align-items: center;
 }
-
 .form-section h4 i {
 margin-left: 10px;
 font-size: 24px;
 }
-
 .form-label {
 font-weight: bold;
 color: #333;
 margin-bottom: 8px;
 }
-
 .form-control:focus,
 .form-select:focus {
 border-color: var(--primary-color);
 box-shadow: 0 0 0 0.25rem rgba(33, 150, 243, 0.25);
 }
-
 .required-field::after {
 content: ' *';
 color: var(--danger-color);
 }
-
 /* Interest Checkboxes */
 .interest-group {
 border: 1px solid #ddd;
@@ -143,22 +116,18 @@ padding: 20px;
 margin-bottom: 15px;
 background: var(--light-bg);
 }
-
 .interest-group h5 {
 color: var(--primary-color);
 font-size: 18px;
 margin-bottom: 15px;
 }
-
 .form-check {
 margin-bottom: 10px;
 }
-
 .form-check-input:checked {
 background-color: var(--primary-color);
 border-color: var(--primary-color);
 }
-
 /* Submit Button */
 .btn-submit {
 background: var(--primary-color);
@@ -170,13 +139,11 @@ font-size: 18px;
 font-weight: bold;
 transition: all 0.3s;
 }
-
 .btn-submit:hover {
 background: #1976D2;
 transform: translateY(-2px);
 box-shadow: 0 5px 20px rgba(33, 150, 243, 0.3);
 }
-
 /* Membership Types */
 .membership-type {
 border: 2px solid #ddd;
@@ -187,18 +154,15 @@ cursor: pointer;
 transition: all 0.3s;
 position: relative;
 }
-
 .membership-type:hover {
 border-color: var(--primary-color);
 transform: translateY(-5px);
 box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
-
 .membership-type.selected {
 border-color: var(--primary-color);
 background: #e3f2fd;
 }
-
 .membership-type .badge {
 position: absolute;
 top: -10px;
@@ -207,71 +171,57 @@ padding: 5px 15px;
 background: var(--warning-color);
 color: #333;
 }
-
 .membership-price {
 font-size: 36px;
 font-weight: bold;
 color: var(--primary-color);
 margin: 15px 0;
 }
-
 .membership-price small {
 font-size: 16px;
 color: #666;
 }
 
-/* Progress Bar */
 .form-progress {
 margin-bottom: 30px;
 }
-
 .progress {
 height: 8px;
 background: #e0e0e0;
 }
-
 .progress-bar {
 background: var(--primary-color);
 transition: width 0.3s;
 }
-
 /* Footer */
 footer {
 background: var(--dark-color);
 color: white;
 padding: 40px 0 20px;
 }
-
 .footer-links a {
 color: white;
 text-decoration: none;
 transition: color 0.3s;
 }
-
 .footer-links a:hover {
 color: var(--secondary-color);
 }
 
-
-
-/* Validation Styles */
 .was-validated .form-control:invalid,
 .was-validated .form-select:invalid {
 border-color: var(--danger-color);
 }
-
 .was-validated .form-control:valid,
 .was-validated .form-select:valid {
 border-color: var(--success-color);
 }
-
 .invalid-feedback {
 display: none;
 color: var(--danger-color);
 font-size: 14px;
 margin-top: 5px;
 }
-
 .was-validated .form-control:invalid ~ .invalid-feedback,
 .was-validated .form-select:invalid ~ .invalid-feedback {
 display: block;
@@ -279,7 +229,6 @@ display: block;
 </style>
 </head>
 <body>
-<!-- Header Top -->
 <div class="header-top">
 <div class="container">
 <div class="row align-items-center">
@@ -299,8 +248,6 @@ display: block;
 </div>
 </div>
 </div>
-
-<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
 <div class="container">
 <a class="navbar-brand" href="index.html">
@@ -336,16 +283,12 @@ display: block;
 </div>
 </div>
 </nav>
-
-<!-- Page Header -->
 <div class="page-header">
 <div class="container">
 <h1 class="display-4 fw-bold" data-aos="fade-up">عضویت در بنیاد آسمان آبی</h1>
 <p class="lead" data-aos="fade-up" data-aos-delay="100">به جمع ما بپیوندید و در ساخت آینده‌ای پاک‌تر سهیم باشید</p>
 </div>
 </div>
-
-<!-- Benefits Section -->
 <section class="py-5 bg-light">
 <div class="container">
 <h2 class="text-center mb-5" data-aos="fade-up">مزایای عضویت در بنیاد</h2>
@@ -407,16 +350,12 @@ display: block;
 </div>
 </div>
 </section>
-
-<!-- Membership Form Section -->
 <section class="py-5">
 <div class="container">
 <div class="row">
 <div class="col-lg-10 mx-auto">
 <div class="membership-form" data-aos="fade-up">
 <h2 class="text-center mb-4">فرم عضویت</h2>
-
-<!-- Progress Bar -->
 <div class="form-progress mb-4">
 <div class="progress">
 <div class="progress-bar" role="progressbar" style="width: 25%"></div>
@@ -428,9 +367,7 @@ display: block;
 <small>تأیید نهایی</small>
 </div>
 </div>
-
 <form id="membershipForm" class="needs-validation" novalidate>
-<!-- Section 1: Membership Type -->
 <div class="form-section" id="section1">
 <h4><i class="fas fa-user-tag"></i>انتخاب نوع عضویت</h4>
 <div class="row">
@@ -483,8 +420,6 @@ display: block;
 <input type="hidden" name="membershipType" id="membershipType" required>
 <div class="invalid-feedback">لطفاً نوع عضویت را انتخاب کنید</div>
 </div>
-
-<!-- Section 2: Personal Information -->
 <div class="form-section" id="section2" style="display: none;">
 <h4><i class="fas fa-user"></i>اطلاعات شخصی</h4>
 <div class="row">
@@ -561,11 +496,8 @@ display: block;
 </div>
 </div>
 </div>
-
-<!-- Section 3: Interests -->
 <div class="form-section" id="section3" style="display: none;">
 <h4><i class="fas fa-heart"></i>زمینه‌های علاقه‌مندی برای همکاری</h4>
-
 <div class="interest-group">
 <h5>فعالیت‌های آموزشی</h5>
 <div class="row">
@@ -599,7 +531,6 @@ display: block;
 </div>
 </div>
 </div>
-
 <div class="interest-group">
 <h5>فعالیت‌های اجرایی</h5>
 <div class="row">
@@ -633,7 +564,6 @@ display: block;
 </div>
 </div>
 </div>
-
 <div class="interest-group">
 <h5>فعالیت‌های رسانه‌ای</h5>
 <div class="row">
@@ -667,22 +597,17 @@ display: block;
 </div>
 </div>
 </div>
-
 <div class="mt-3">
 <label for="otherInterests" class="form-label">سایر علاقه‌مندی‌ها</label>
 <textarea class="form-control" id="otherInterests" name="otherInterests" rows="3" placeholder="در صورت داشتن مهارت یا علاقه‌مندی خاصی که در لیست بالا نیست، اینجا بنویسید..."></textarea>
 </div>
 </div>
-
-<!-- Section 4: Confirmation -->
 <div class="form-section" id="section4" style="display: none;">
 <h4><i class="fas fa-check-circle"></i>تأیید و ارسال</h4>
-
 <div class="alert alert-info">
 <h5 class="alert-heading">خلاصه اطلاعات</h5>
 <div id="summaryInfo"></div>
 </div>
-
 <div class="form-check mb-3">
 <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
 <label class="form-check-label" for="terms">
@@ -690,18 +615,14 @@ display: block;
 </label>
 <div class="invalid-feedback">برای عضویت باید قوانین را بپذیرید</div>
 </div>
-
 <div class="form-check mb-3">
 <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter">
 <label class="form-check-label" for="newsletter">
 مایل به دریافت خبرنامه و اطلاعیه‌های بنیاد هستم
 </label>
 </div>
-
 <div class="g-recaptcha mb-3" data-sitekey="your-site-key"></div>
 </div>
-
-<!-- Navigation Buttons -->
 <div class="d-flex justify-content-between mt-4">
 <button type="button" class="btn btn-outline-secondary" id="prevBtn" style="display: none;">
 <i class="fas fa-arrow-right me-2"></i>مرحله قبل
@@ -719,8 +640,6 @@ display: block;
 </div>
 </div>
 </section>
-
-<!-- FAQ Section -->
 <section class="py-5 bg-light">
 <div class="container">
 <h2 class="text-center mb-5" data-aos="fade-up">سؤالات متداول</h2>
@@ -768,8 +687,6 @@ display: block;
 </div>
 </div>
 </section>
-
-<!-- Footer -->
 <footer>
 <div class="container">
 <div class="row">
@@ -805,23 +722,17 @@ display: block;
 </div>
 </div>
 </footer>
-
-
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/main.js"></script>
-
-<!-- Inline Scripts -->
 <script>
-// Initialize AOS
+
 AOS.init({
 duration: 1000,
 once: true
 });
 
-// Form Variables
 const form = document.getElementById('membershipForm');
 const sections = document.querySelectorAll('.form-section');
 const progressBar = document.querySelector('.progress-bar');
@@ -830,7 +741,6 @@ const prevBtn = document.getElementById('prevBtn');
 const submitBtn = document.getElementById('submitBtn');
 let currentSection = 0;
 
-// Membership Type Selection
 const membershipTypes = document.querySelectorAll('.membership-type');
 membershipTypes.forEach(type => {
 type.addEventListener('click', function() {
@@ -840,7 +750,6 @@ document.getElementById('membershipType').value = this.getAttribute('data-type')
 });
 });
 
-// Next Button Click
 nextBtn.addEventListener('click', function() {
 if (validateSection(currentSection)) {
 sections[currentSection].style.display = 'none';
@@ -849,14 +758,12 @@ sections[currentSection].style.display = 'block';
 updateProgress();
 updateButtons();
 
-// Show summary in last section
 if (currentSection === 3) {
 showSummary();
 }
 }
 });
 
-// Previous Button Click
 prevBtn.addEventListener('click', function() {
 sections[currentSection].style.display = 'none';
 currentSection--;
@@ -865,25 +772,21 @@ updateProgress();
 updateButtons();
 });
 
-// Update Progress Bar
 function updateProgress() {
 const progress = ((currentSection + 1) / sections.length) * 100;
 progressBar.style.width = progress + '%';
 }
 
-// Update Navigation Buttons
 function updateButtons() {
 prevBtn.style.display = currentSection === 0 ? 'none' : 'inline-block';
 nextBtn.style.display = currentSection === sections.length - 1 ? 'none' : 'inline-block';
 submitBtn.style.display = currentSection === sections.length - 1 ? 'inline-block' : 'none';
 }
 
-// Validate Section
 function validateSection(sectionIndex) {
 const section = sections[sectionIndex];
 const inputs = section.querySelectorAll('input[required], select[required]');
 let isValid = true;
-
 inputs.forEach(input => {
 if (!input.checkValidity()) {
 input.classList.add('is-invalid');
@@ -892,52 +795,42 @@ isValid = false;
 input.classList.remove('is-invalid');
 }
 });
-
 if (sectionIndex === 0 && !document.getElementById('membershipType').value) {
 alert('لطفاً نوع عضویت را انتخاب کنید');
 isValid = false;
 }
-
 return isValid;
 }
 
-// Show Summary
 function showSummary() {
 const membershipType = document.getElementById('membershipType').value;
 const firstName = document.getElementById('firstName').value;
 const lastName = document.getElementById('lastName').value;
 const email = document.getElementById('email').value;
-
 let typeText = '';
 switch(membershipType) {
 case 'regular': typeText = 'عادی (رایگان)'; break;
 case 'gold': typeText = 'طلایی (۱۰۰,۰۰۰ تومان)'; break;
 case 'platinum': typeText = 'پلاتینیوم (۳۰۰,۰۰۰ تومان)'; break;
 }
-
 const summary = `
 <p><strong>نام و نام خانوادگی:</strong> ${firstName} ${lastName}</p>
 <p><strong>ایمیل:</strong> ${email}</p>
 <p><strong>نوع عضویت:</strong> ${typeText}</p>
 `;
-
 document.getElementById('summaryInfo').innerHTML = summary;
 }
 
-// Form Submit
 form.addEventListener('submit', function(e) {
 e.preventDefault();
-
 if (!form.checkValidity()) {
 e.stopPropagation();
 form.classList.add('was-validated');
 return;
 }
 
-// Simulate form submission
 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>در حال ارسال...';
 submitBtn.disabled = true;
-
 setTimeout(() => {
 alert('درخواست عضویت شما با موفقیت ثبت شد. ایمیل تأیید به آدرس شما ارسال خواهد شد.');
 form.reset();
@@ -945,7 +838,6 @@ window.location.href = 'index.html';
 }, 2000);
 });
 
-// Real-time validation
 const inputs = form.querySelectorAll('input, select');
 inputs.forEach(input => {
 input.addEventListener('blur', function() {
@@ -960,17 +852,13 @@ this.classList.add('is-valid');
 });
 });
 
-// National Code Validation
 document.getElementById('nationalCode').addEventListener('input', function(e) {
 this.value = this.value.replace(/[^0-9]/g, '');
 });
 
-// Phone Number Validation
 document.getElementById('phone').addEventListener('input', function(e) {
 this.value = this.value.replace(/[^0-9]/g, '');
 });
-
-
 </script>
 </body>
 </html>

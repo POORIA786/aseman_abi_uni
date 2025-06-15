@@ -4,20 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ارتباط با ما - بنیاد آسمان آبی</title>
-
-<!-- Bootstrap 5 RTL -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
-
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<!-- AOS Animation -->
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-
-<!-- Custom CSS -->
 <link rel="stylesheet" href="css/style.css">
-
-<!-- Inline Styles -->
 <style>
 :root {
 --primary-color: #2196F3;
@@ -29,28 +19,23 @@
 --danger-color: #dc3545;
 --info-color: #17a2b8;
 }
-
 body {
 font-family: 'Vazir', Arial, sans-serif;
 line-height: 1.8;
 }
 
-/* Header Styles */
 .header-top {
 background-color: var(--primary-color);
 color: white;
 padding: 10px 0;
 }
-
 .navbar {
 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-
 .navbar-brand img {
 height: 50px;
 }
 
-/* Page Header */
 .page-header {
 background: linear-gradient(rgba(33, 150, 243, 0.8), rgba(33, 150, 243, 0.8)), url('https://source.unsplash.com/1920x400/?contact,communication') center/cover;
 padding: 100px 0 50px;
@@ -58,7 +43,6 @@ color: white;
 text-align: center;
 }
 
-/* Category Cards */
 .category-card {
 background: white;
 border: 2px solid #e0e0e0;
@@ -69,18 +53,15 @@ cursor: pointer;
 transition: all 0.3s;
 height: 100%;
 }
-
 .category-card:hover {
 border-color: var(--primary-color);
 transform: translateY(-5px);
 box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
-
 .category-card.selected {
 border-color: var(--primary-color);
 background: #e3f2fd;
 }
-
 .category-icon {
 width: 70px;
 height: 70px;
@@ -91,37 +72,30 @@ justify-content: center;
 border-radius: 50%;
 font-size: 30px;
 }
-
 .category-card[data-category="complaint"] .category-icon {
 background: #ffebee;
 color: var(--danger-color);
 }
-
 .category-card[data-category="suggestion"] .category-icon {
 background: #e8f5e9;
 color: var(--success-color);
 }
-
 .category-card[data-category="appreciation"] .category-icon {
 background: #fff3e0;
 color: var(--warning-color);
 }
-
 .category-card[data-category="cooperation"] .category-icon {
 background: #e3f2fd;
 color: var(--primary-color);
 }
-
 .category-card[data-category="media"] .category-icon {
 background: #f3e5f5;
 color: #9c27b0;
 }
-
 .category-card[data-category="other"] .category-icon {
 background: #e0e0e0;
 color: #616161;
 }
-
 /* Contact Form */
 .contact-form {
 background: white;
@@ -129,25 +103,21 @@ padding: 40px;
 border-radius: 20px;
 box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
-
 .form-label {
 font-weight: bold;
 color: #333;
 margin-bottom: 8px;
 }
-
 .form-control:focus,
 .form-select:focus {
 border-color: var(--primary-color);
 box-shadow: 0 0 0 0.25rem rgba(33, 150, 243, 0.25);
 }
-
 .required-field::after {
 content: ' *';
 color: var(--danger-color);
 }
 
-/* Priority Badges */
 .priority-badge {
 display: inline-block;
 padding: 5px 15px;
@@ -157,27 +127,22 @@ margin-right: 10px;
 cursor: pointer;
 transition: all 0.3s;
 }
-
 .priority-badge.low {
 background: #e8f5e9;
 color: var(--success-color);
 }
-
 .priority-badge.medium {
 background: #fff3e0;
 color: var(--warning-color);
 }
-
 .priority-badge.high {
 background: #ffebee;
 color: var(--danger-color);
 }
-
 .priority-badge.selected {
 transform: scale(1.1);
 box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
-
 /* File Upload */
 .file-upload-area {
 border: 2px dashed #ddd;
@@ -187,18 +152,15 @@ text-align: center;
 transition: all 0.3s;
 cursor: pointer;
 }
-
 .file-upload-area:hover {
 border-color: var(--primary-color);
 background: #f5f5f5;
 }
-
 .file-upload-area.dragging {
 border-color: var(--primary-color);
 background: #e3f2fd;
 }
 
-/* Quick Contact Cards */
 .quick-contact-card {
 background: white;
 padding: 30px;
@@ -208,12 +170,10 @@ text-align: center;
 height: 100%;
 transition: all 0.3s;
 }
-
 .quick-contact-card:hover {
 transform: translateY(-5px);
 box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
-
 .quick-contact-icon {
 width: 60px;
 height: 60px;
@@ -227,7 +187,6 @@ font-size: 24px;
 margin: 0 auto 20px;
 }
 
-/* Success Message */
 .success-message {
 display: none;
 background: var(--success-color);
@@ -238,54 +197,45 @@ text-align: center;
 margin-top: 20px;
 }
 
-/* Response Times */
 .response-time-info {
 background: #e3f2fd;
 padding: 20px;
 border-radius: 10px;
 margin-bottom: 30px;
 }
-
 .response-time-info h5 {
 color: var(--primary-color);
 margin-bottom: 15px;
 }
-
 .response-time-item {
 display: flex;
 align-items: center;
 margin-bottom: 10px;
 }
-
 .response-time-item i {
 width: 30px;
 color: var(--primary-color);
 }
 
-/* Footer */
 footer {
 background: var(--dark-color);
 color: white;
 padding: 40px 0 20px;
 }
-
 .footer-links a {
 color: white;
 text-decoration: none;
 transition: color 0.3s;
 }
-
 .footer-links a:hover {
 color: var(--secondary-color);
 }
 
-/* FAQ Section */
 .faq-section {
 background: var(--light-bg);
 padding: 60px 0;
 }
 
-/* Loading Spinner */
 .spinner-overlay {
 display: none;
 position: fixed;
@@ -298,19 +248,16 @@ z-index: 9999;
 justify-content: center;
 align-items: center;
 }
-
 .spinner-overlay.show {
 display: flex;
 }
 
-/* Validation */
 .invalid-feedback {
 display: none;
 color: var(--danger-color);
 font-size: 14px;
 margin-top: 5px;
 }
-
 .was-validated .form-control:invalid ~ .invalid-feedback,
 .was-validated .form-select:invalid ~ .invalid-feedback {
 display: block;
@@ -318,14 +265,11 @@ display: block;
 </style>
 </head>
 <body>
-<!-- Loading Spinner -->
 <div class="spinner-overlay" id="loadingSpinner">
 <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;">
 <span class="visually-hidden">در حال بارگذاری...</span>
 </div>
 </div>
-
-<!-- Header Top -->
 <div class="header-top">
 <div class="container">
 <div class="row align-items-center">
@@ -345,8 +289,6 @@ display: block;
 </div>
 </div>
 </div>
-
-<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
 <div class="container">
 <a class="navbar-brand" href="index.html">
@@ -382,16 +324,12 @@ display: block;
 </div>
 </div>
 </nav>
-
-<!-- Page Header -->
 <div class="page-header">
 <div class="container">
 <h1 class="display-4 fw-bold" data-aos="fade-up">ارتباط با ما</h1>
 <p class="lead" data-aos="fade-up" data-aos-delay="100">نظرات، پیشنهادات و انتقادات شما راهنمای ما هستند</p>
 </div>
 </div>
-
-<!-- Quick Contact Section -->
 <section class="py-5">
 <div class="container">
 <div class="row">
@@ -438,8 +376,6 @@ display: block;
 </div>
 </div>
 </section>
-
-<!-- Category Selection -->
 <section class="py-5 bg-light">
 <div class="container">
 <h2 class="text-center mb-5" data-aos="fade-up">موضوع پیام شما چیست؟</h2>
@@ -501,18 +437,14 @@ display: block;
 </div>
 </div>
 </section>
-
-<!-- Contact Form Section -->
 <section class="py-5">
 <div class="container">
 <div class="row">
 <div class="col-lg-8">
 <div class="contact-form" data-aos="fade-up">
 <h3 class="mb-4">فرم ارسال پیام</h3>
-
 <form id="contactForm" class="needs-validation" novalidate>
 <input type="hidden" id="messageCategory" name="category" required>
-
 <div class="row">
 <div class="col-md-6 mb-3">
 <label for="fullName" class="form-label required-field">نام و نام خانوادگی</label>
@@ -535,7 +467,6 @@ display: block;
 <div class="invalid-feedback">لطفاً موضوع پیام را وارد کنید</div>
 </div>
 </div>
-
 <div class="mb-3">
 <label class="form-label">اولویت پیام</label>
 <div>
@@ -551,7 +482,6 @@ display: block;
 </div>
 <input type="hidden" id="priority" name="priority" value="low">
 </div>
-
 <div class="mb-3">
 <label for="department" class="form-label">واحد مربوطه</label>
 <select class="form-select" id="department" name="department">
@@ -565,14 +495,12 @@ display: block;
 <option value="it">فناوری اطلاعات</option>
 </select>
 </div>
-
 <div class="mb-3">
 <label for="message" class="form-label required-field">متن پیام</label>
 <textarea class="form-control" id="message" name="message" rows="6" required></textarea>
 <div class="invalid-feedback">لطفاً پیام خود را بنویسید</div>
 <small class="text-muted">حداقل ۲۰ کاراکتر</small>
 </div>
-
 <div class="mb-3">
 <label class="form-label">فایل ضمیمه</label>
 <div class="file-upload-area" id="fileUploadArea">
@@ -583,14 +511,12 @@ display: block;
 </div>
 <div id="fileInfo" class="mt-2"></div>
 </div>
-
 <div class="form-check mb-3">
 <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter">
 <label class="form-check-label" for="newsletter">
 مایل به دریافت خبرنامه بنیاد هستم
 </label>
 </div>
-
 <div class="form-check mb-4">
 <input class="form-check-input" type="checkbox" id="privacy" name="privacy" required>
 <label class="form-check-label" for="privacy">
@@ -598,12 +524,10 @@ display: block;
 </label>
 <div class="invalid-feedback">برای ارسال پیام باید با سیاست حریم خصوصی موافقت کنید</div>
 </div>
-
 <button type="submit" class="btn btn-primary btn-lg px-5">
 <i class="fas fa-paper-plane me-2"></i>ارسال پیام
 </button>
 </form>
-
 <div class="success-message" id="successMessage">
 <i class="fas fa-check-circle fa-3x mb-3"></i>
 <h4>پیام شما با موفقیت ارسال شد!</h4>
@@ -612,7 +536,6 @@ display: block;
 </div>
 </div>
 </div>
-
 <div class="col-lg-4">
 <div class="response-time-info" data-aos="fade-up" data-aos-delay="100">
 <h5><i class="fas fa-clock me-2"></i>زمان پاسخگویی</h5>
@@ -637,7 +560,6 @@ display: block;
 <span><strong>روابط عمومی:</strong> حداکثر ۲۴ ساعت</span>
 </div>
 </div>
-
 <div class="card mb-4" data-aos="fade-up" data-aos-delay="200">
 <div class="card-body">
 <h5 class="card-title"><i class="fas fa-info-circle me-2"></i>نکات مهم</h5>
@@ -649,7 +571,6 @@ display: block;
 </ul>
 </div>
 </div>
-
 <div class="card" data-aos="fade-up" data-aos-delay="300">
 <div class="card-body text-center">
 <h5 class="card-title">پیگیری پیام قبلی</h5>
@@ -663,8 +584,6 @@ display: block;
 </div>
 </div>
 </section>
-
-<!-- FAQ Section -->
 <section class="faq-section">
 <div class="container">
 <h2 class="text-center mb-5" data-aos="fade-up">سؤالات متداول</h2>
@@ -712,8 +631,6 @@ display: block;
 </div>
 </div>
 </section>
-
-<!-- Tracking Modal -->
 <div class="modal fade" id="trackingModal" tabindex="-1">
 <div class="modal-dialog">
 <div class="modal-content">
@@ -734,8 +651,6 @@ display: block;
 </div>
 </div>
 </div>
-
-<!-- Footer -->
 <footer>
 <div class="container">
 <div class="row">
@@ -771,33 +686,25 @@ display: block;
 </div>
 </div>
 </footer>
-
-
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/main.js"></script>
-
-<!-- Inline Scripts -->
 <script>
-// Initialize AOS
+
 AOS.init({
 duration: 1000,
 once: true
 });
 
-// Category Selection
 const categoryCards = document.querySelectorAll('.category-card');
 const messageCategoryInput = document.getElementById('messageCategory');
-
 categoryCards.forEach(card => {
 card.addEventListener('click', function() {
 categoryCards.forEach(c => c.classList.remove('selected'));
 this.classList.add('selected');
 messageCategoryInput.value = this.getAttribute('data-category');
 
-// Scroll to form
 document.querySelector('.contact-form').scrollIntoView({
 behavior: 'smooth',
 block: 'start'
@@ -805,10 +712,8 @@ block: 'start'
 });
 });
 
-// Priority Selection
 const priorityBadges = document.querySelectorAll('.priority-badge');
 const priorityInput = document.getElementById('priority');
-
 priorityBadges.forEach(badge => {
 badge.addEventListener('click', function() {
 priorityBadges.forEach(b => b.classList.remove('selected'));
@@ -817,47 +722,36 @@ priorityInput.value = this.getAttribute('data-priority');
 });
 });
 
-// Set default priority
 document.querySelector('.priority-badge.low').classList.add('selected');
 
-// File Upload
 const fileUploadArea = document.getElementById('fileUploadArea');
 const fileInput = document.getElementById('fileInput');
 const fileInfo = document.getElementById('fileInfo');
-
 fileUploadArea.addEventListener('click', () => fileInput.click());
-
 fileUploadArea.addEventListener('dragover', (e) => {
 e.preventDefault();
 fileUploadArea.classList.add('dragging');
 });
-
 fileUploadArea.addEventListener('dragleave', () => {
 fileUploadArea.classList.remove('dragging');
 });
-
 fileUploadArea.addEventListener('drop', (e) => {
 e.preventDefault();
 fileUploadArea.classList.remove('dragging');
-
 const files = e.dataTransfer.files;
 handleFiles(files);
 });
-
 fileInput.addEventListener('change', (e) => {
 handleFiles(e.target.files);
 });
-
 function handleFiles(files) {
 if (files.length > 0) {
 const file = files[0];
 const fileSize = (file.size / 1024 / 1024).toFixed(2);
-
 if (fileSize > 5) {
 alert('حجم فایل نباید بیشتر از 5 مگابایت باشد');
 return;
 }
-
 fileInfo.innerHTML = `
 <div class="alert alert-info">
 <i class="fas fa-file me-2"></i>
@@ -867,24 +761,19 @@ ${file.name} (${fileSize} MB)
 `;
 }
 }
-
 function removeFile() {
 fileInput.value = '';
 fileInfo.innerHTML = '';
 }
-
 // Form Validation
 const contactForm = document.getElementById('contactForm');
 const loadingSpinner = document.getElementById('loadingSpinner');
 const successMessage = document.getElementById('successMessage');
-
 contactForm.addEventListener('submit', function(e) {
 e.preventDefault();
-
 if (!this.checkValidity() || !messageCategoryInput.value) {
 e.stopPropagation();
 this.classList.add('was-validated');
-
 if (!messageCategoryInput.value) {
 alert('لطفاً موضوع پیام را انتخاب کنید');
 document.querySelector('.category-card').scrollIntoView({
@@ -895,22 +784,17 @@ block: 'center'
 return;
 }
 
-// Show loading
 loadingSpinner.classList.add('show');
 
-// Simulate form submission
 setTimeout(() => {
 loadingSpinner.classList.remove('show');
 
-// Generate tracking code
 const trackingCode = 'MSG-' + new Date().getFullYear() + '-' + Math.floor(Math.random() * 1000).toString().padStart(3, '0');
 document.getElementById('trackingCode').textContent = trackingCode;
 
-// Hide form and show success message
 contactForm.style.display = 'none';
 successMessage.style.display = 'block';
 
-// Scroll to success message
 successMessage.scrollIntoView({
 behavior: 'smooth',
 block: 'center'
@@ -918,12 +802,10 @@ block: 'center'
 }, 2000);
 });
 
-// Message character counter
 const messageTextarea = document.getElementById('message');
 messageTextarea.addEventListener('input', function() {
 const length = this.value.length;
 const small = this.nextElementSibling.nextElementSibling;
-
 if (length < 20) {
 small.textContent = `حداقل ۲۰ کاراکتر (${20 - length} کاراکتر باقی‌مانده)`;
 small.classList.add('text-danger');
@@ -935,15 +817,11 @@ small.classList.add('text-muted');
 }
 });
 
-// Tracking Form
 const trackingForm = document.getElementById('trackingForm');
 const trackingResult = document.getElementById('trackingResult');
-
 trackingForm.addEventListener('submit', function(e) {
 e.preventDefault();
-
 const trackingCode = document.getElementById('trackingInput').value;
-
 if (!trackingCode) {
 trackingResult.innerHTML = `
 <div class="alert alert-danger">
@@ -953,7 +831,6 @@ trackingResult.innerHTML = `
 return;
 }
 
-// Simulate tracking
 trackingResult.innerHTML = `
 <div class="alert alert-info">
 <h6>وضعیت پیام: <span class="badge bg-warning">در حال بررسی</span></h6>
@@ -964,7 +841,6 @@ trackingResult.innerHTML = `
 `;
 });
 
-// Real-time validation
 const inputs = contactForm.querySelectorAll('input[required], textarea[required]');
 inputs.forEach(input => {
 input.addEventListener('blur', function() {
@@ -976,12 +852,9 @@ this.classList.remove('is-invalid');
 });
 });
 
-// Phone number formatting
 document.getElementById('phone').addEventListener('input', function(e) {
 this.value = this.value.replace(/[^0-9]/g, '');
 });
-
-
 </script>
 </body>
 </html>

@@ -4,23 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>بنیاد آسمان آبی - حفاظت از هوای پاک</title>
-
-<!-- Bootstrap 5 RTL -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
-
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<!-- Swiper CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-
-<!-- AOS Animation -->
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-
-<!-- Custom CSS -->
 <link rel="stylesheet" href="css/style.css">
-
-<!-- Inline Styles for Demo -->
 <style>
 :root {
 --primary-color: #2196F3;
@@ -28,33 +16,27 @@
 --dark-color: #1a1a1a;
 --light-bg: #f8f9fa;
 }
-
 body {
 font-family: 'Vazir', Arial, sans-serif;
 line-height: 1.8;
 }
 
-/* Header Styles */
 .header-top {
 background-color: var(--primary-color);
 color: white;
 padding: 10px 0;
 }
-
 .navbar {
 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-
 .navbar-brand img {
 height: 50px;
 }
 
-/* Hero Slider */
 .hero-slider {
 height: 500px;
 position: relative;
 }
-
 .hero-slider .swiper-slide {
 background-size: cover;
 background-position: center;
@@ -62,7 +44,6 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
-
 .hero-content {
 text-align: center;
 color: rgb(0, 0, 0);
@@ -72,90 +53,73 @@ padding: 30px 50px;
 border-radius: 10px;
 }
 
-/* Statistics Section */
 .stats-section {
 background: var(--light-bg);
 padding: 60px 0;
 }
-
 .stat-item {
 text-align: center;
 padding: 30px;
 transition: transform 0.3s;
 }
-
 .stat-item:hover {
 transform: translateY(-10px);
 }
-
 .stat-number {
 font-size: 48px;
 font-weight: bold;
 color: var(--primary-color);
 }
 
-/* Activities Section */
 .activity-card {
 border: none;
 box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 transition: all 0.3s;
 height: 100%;
 }
-
 .activity-card:hover {
 transform: translateY(-5px);
 box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* Articles Slider */
 .articles-slider .swiper-slide {
 height: auto;
 }
-
 .article-card {
 border: none;
 box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 height: 100%;
 }
 
-/* Partners Section */
 .partners-section {
 background: var(--light-bg);
 padding: 60px 0;
 }
-
 .partner-logo {
 filter: grayscale(100%);
 opacity: 0.7;
 transition: all 0.3s;
 max-height: 80px;
 }
-
 .partner-logo:hover {
 filter: grayscale(0%);
 opacity: 1;
 }
 
-/* Footer */
 footer {
 background: var(--dark-color);
 color: white;
 padding: 40px 0 20px;
 }
-
 .footer-links a {
 color: white;
 text-decoration: none;
 transition: color 0.3s;
 }
-
 .footer-links a:hover {
 color: var(--secondary-color);
 }
 
-
-
-/* News Ticker */
 .news-ticker {
 background: rgba(255,255,255,0.9);
 padding: 10px;
@@ -165,12 +129,10 @@ left: 0;
 right: 0;
 z-index: 10;
 }
-
 .ticker-content {
 animation: ticker 20s linear infinite;
 white-space: nowrap;
 }
-
 @keyframes ticker {
 0% { transform: translateX(100%); }
 100% { transform: translateX(-100%); }
@@ -178,7 +140,6 @@ white-space: nowrap;
 </style>
 </head>
 <body>
-<!-- Header Top -->
 <div class="header-top">
 <div class="container">
 <div class="row align-items-center">
@@ -198,8 +159,6 @@ white-space: nowrap;
 </div>
 </div>
 </div>
-
-<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
 <div class="container">
 <a class="navbar-brand" href="index.html">
@@ -238,8 +197,6 @@ white-space: nowrap;
 </div>
 </div>
 </nav>
-
-<!-- Hero Slider -->
 <div class="swiper hero-slider">
 <div class="swiper-wrapper">
 <div class="swiper-slide" style="background-image: url('images/sky.jpg');  background-size: 1300px 500px; background-position: center;  background-repeat: no-repeat;">
@@ -250,7 +207,6 @@ white-space: nowrap;
 همین حالا عضو شوید
 </a>
 </div>
-<!-- News Ticker -->
 <div class="news-ticker">
 <div class="ticker-content" style="text-align: center;">
 <strong  >آخرین خبر:</strong> کارگاه آموزشی کاهش آلودگی هوا - پنجشنبه ۲۵ آذر ساعت ۱۰ صبح | ثبت‌نام رایگان
@@ -286,8 +242,6 @@ white-space: nowrap;
 <div class="swiper-button-next"></div>
 <div class="swiper-button-prev"></div>
 </div>
-
-<!-- Statistics Section -->
 <section class="stats-section">
 <div class="container">
 <div class="row">
@@ -322,8 +276,6 @@ white-space: nowrap;
 </div>
 </div>
 </section>
-
-<!-- Latest News Section -->
 <section class="py-5">
 <div class="container">
 <h2 class="text-center mb-5" data-aos="fade-up">آخرین اخبار و رویدادها</h2>
@@ -367,8 +319,6 @@ white-space: nowrap;
 </div>
 </div>
 </section>
-
-<!-- Featured Articles Slider -->
 <section class="py-5 bg-light">
 <div class="container">
 <h2 class="text-center mb-5" data-aos="fade-up">مقالات برگزیده</h2>
@@ -430,8 +380,6 @@ white-space: nowrap;
 </div>
 </div>
 </section>
-
-<!-- Activities Section -->
 <section class="py-5">
 <div class="container">
 <h2 class="text-center mb-5" data-aos="fade-up">فعالیت‌های سازمان</h2>
@@ -501,54 +449,43 @@ white-space: nowrap;
 </div>
 </div>
 </section>
-
-<!-- Partners Section -->
 <section class="partners-section">
 <div class="container">
 <h2 class="text-center mb-5" data-aos="fade-up">لینک‌های مرتبط و همکاران</h2>
 <div class="row align-items-center">
-
 <div class="col-md-2 col-4 mb-4 text-center" data-aos="fade-up">
     <a href="https://irnef.ir/" target="_blank" rel="noopener noreferrer" title="صندوق ملی محیط زیست">
         <img src="images/gallery/صندوق محیط زیست.jpg" alt="صندوق ملی محیط زیست" class="partner-logo img-fluid">
     </a>
 </div>
-
 <div class="col-md-2 col-4 mb-4 text-center" data-aos="fade-up" data-aos-delay="100">
     <a href="https://tehran.ir/" target="_blank" rel="noopener noreferrer" title="شهرداری تهران">
         <img src="images/gallery/شهرداری تهران.png" alt="شهرداری تهران" class="partner-logo img-fluid">
     </a>
 </div>
-
 <div class="col-md-2 col-4 mb-4 text-center" data-aos="fade-up" data-aos-delay="200">
     <a href="https://ut.ac.ir/" target="_blank" rel="noopener noreferrer" title="دانشگاه تهران">
         <img src="images/gallery/University_of_Tehran_logo.svg.png" alt="دانشگاه تهران" class="partner-logo img-fluid">
     </a>
 </div>
-
 <div class="col-md-2 col-4 mb-4 text-center" data-aos="fade-up" data-aos-delay="300">
     <a href="http://www.cfi.ir/" target="_blank" rel="noopener noreferrer" title="فدراسیون دوچرخه‌سواری">
         <img src="images/gallery/فدراسیون دوچرخه سواری.png" alt="فدراسیون دوچرخه‌سواری" class="partner-logo img-fluid">
     </a>
 </div>
-
 <div class="col-md-2 col-4 mb-4 text-center" data-aos="fade-up" data-aos-delay="400">
     <a href="https://irnef.ir/" target="_blank" rel="noopener noreferrer" title="صندوق ملی محیط زیست">
         <img src="images/gallery/صندوق محیط زیستت.png" alt="صندوق ملی محیط زیست" class="partner-logo img-fluid">
     </a>
 </div>
-
 <div class="col-md-2 col-4 mb-4 text-center" data-aos="fade-up" data-aos-delay="500">
     <a href="https://www.who.int/" target="_blank" rel="noopener noreferrer" title="سازمان بهداشت جهانی">
         <img src="images/gallery/who.webp" alt="WHO" class="partner-logo img-fluid">
     </a>
 </div>
-
 </div>
 </div>
 </section>
-
-<!-- Footer -->
 <footer>
 <div class="container">
 <div class="row">
@@ -596,10 +533,6 @@ white-space: nowrap;
 </div>
 </div>
 </footer>
-
-
-
-<!-- Search Modal -->
 <div class="modal fade" id="searchModal" tabindex="-1">
 <div class="modal-dialog modal-lg">
 <div class="modal-content">
@@ -620,23 +553,18 @@ white-space: nowrap;
 </div>
 </div>
 </div>
-
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/main.js"></script>
-
-<!-- Inline Scripts -->
 <script>
-// Initialize AOS
+
 AOS.init({
 duration: 1000,
 once: true
 });
 
-// Initialize Hero Slider
 const heroSlider = new Swiper('.hero-slider', {
 loop: true,
 autoplay: {
@@ -653,7 +581,6 @@ prevEl: '.swiper-button-prev',
 },
 });
 
-// Initialize Articles Slider
 const articlesSlider = new Swiper('.articles-slider', {
 loop: true,
 slidesPerView: 1,
@@ -679,16 +606,13 @@ slidesPerView: 4,
 },
 });
 
-// Counter Animation
 const counters = document.querySelectorAll('.stat-number');
 const speed = 200;
-
 const animateCounter = (counter) => {
 const animate = () => {
 const value = +counter.getAttribute('data-count');
 const data = +counter.innerText;
 const time = value / speed;
-
 if (data < value) {
 counter.innerText = Math.ceil(data + time);
 setTimeout(animate, 1);
@@ -699,11 +623,9 @@ counter.innerText = value.toLocaleString('fa-IR');
 animate();
 }
 
-// Intersection Observer for counters
 const observerOptions = {
 threshold: 0.5
 };
-
 const observer = new IntersectionObserver(entries => {
 entries.forEach(entry => {
 if (entry.isIntersecting) {
@@ -712,21 +634,15 @@ observer.unobserve(entry.target);
 }
 });
 }, observerOptions);
-
 counters.forEach(counter => {
 observer.observe(counter);
 });
 
-// Search Modal
 document.getElementById('searchBtn').addEventListener('click', () => {
 const searchModal = new bootstrap.Modal(document.getElementById('searchModal'));
 searchModal.show();
 });
-
-
 </script>
-
-<!-- انتهای index.html قبل از </body> -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
 const heroSwiper = new Swiper('.hero-slider', {
@@ -739,6 +655,5 @@ const heroSwiper = new Swiper('.hero-slider', {
     autoplay: false
 });
 </script>
-
 </body>
 </html>

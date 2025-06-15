@@ -4,20 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>تیم ما - بنیاد آسمان آبی</title>
-
-<!-- Bootstrap 5 RTL -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
-
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<!-- AOS Animation -->
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-
-<!-- Custom CSS -->
 <link rel="stylesheet" href="css/style.css">
-
-<!-- Inline Styles -->
 <style>
 :root {
 --primary-color: #2196F3;
@@ -25,27 +15,22 @@
 --dark-color: #1a1a1a;
 --light-bg: #f8f9fa;
 }
-
 body {
 font-family: 'Vazir', Arial, sans-serif;
 line-height: 1.8;
 }
-
 /* Header Styles */
 .header-top {
 background-color: var(--primary-color);
 color: white;
 padding: 10px 0;
 }
-
 .navbar {
 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-
 .navbar-brand img {
 height: 50px;
 }
-
 /* Page Header */
 .page-header {
 background: linear-gradient(rgba(33, 150, 243, 0.8), rgba(33, 150, 243, 0.8)), url('https://source.unsplash.com/1920x400/?team,office') center/cover;
@@ -53,7 +38,6 @@ padding: 100px 0 50px;
 color: white;
 text-align: center;
 }
-
 /* Team Member Card */
 .team-card {
 background: white;
@@ -65,29 +49,24 @@ transition: all 0.3s ease;
 height: 100%;
 cursor: pointer;
 }
-
 .team-card:hover {
 transform: translateY(-10px);
 box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
-
 .team-card .team-img {
 position: relative;
 overflow: hidden;
 height: 300px;
 }
-
 .team-card .team-img img {
 width: 100%;
 height: 100%;
 object-fit: cover;
 transition: transform 0.3s ease;
 }
-
 .team-card:hover .team-img img {
 transform: scale(1.1);
 }
-
 .team-card .team-overlay {
 position: absolute;
 bottom: 0;
@@ -98,16 +77,13 @@ padding: 20px;
 transform: translateY(100%);
 transition: transform 0.3s ease;
 }
-
 .team-card:hover .team-overlay {
 transform: translateY(0);
 }
-
 .team-card .team-social {
 display: flex;
 gap: 10px;
 }
-
 .team-card .team-social a {
 width: 40px;
 height: 40px;
@@ -119,39 +95,32 @@ justify-content: center;
 color: var(--primary-color);
 transition: all 0.3s;
 }
-
 .team-card .team-social a:hover {
 background: var(--primary-color);
 color: white;
 }
-
 .team-card .team-content {
 padding: 25px;
 text-align: center;
 }
-
 .team-card .team-content h4 {
 color: var(--dark-color);
 margin-bottom: 5px;
 }
-
 .team-card .team-content .position {
 color: var(--primary-color);
 font-size: 14px;
 margin-bottom: 15px;
 }
-
 /* Modal Styles */
 .member-modal .modal-header {
 background: var(--primary-color);
 color: white;
 border-bottom: none;
 }
-
 .member-modal .modal-body {
 padding: 30px;
 }
-
 .member-modal .member-photo {
 width: 200px;
 height: 200px;
@@ -161,25 +130,21 @@ margin: 0 auto 20px;
 display: block;
 border: 5px solid var(--primary-color);
 }
-
 .member-modal .info-item {
 margin-bottom: 15px;
 padding-bottom: 15px;
 border-bottom: 1px solid #eee;
 }
-
 .member-modal .info-item strong {
 color: var(--primary-color);
 display: inline-block;
 width: 120px;
 }
-
 /* Articles Section */
 .articles-section {
 background: var(--light-bg);
 padding: 60px 0;
 }
-
 .article-card {
 background: white;
 border: none;
@@ -189,45 +154,37 @@ box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 transition: all 0.3s;
 height: 100%;
 }
-
 .article-card:hover {
 transform: translateY(-5px);
 box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
-
 .article-card .article-img {
 height: 200px;
 overflow: hidden;
 }
-
 .article-card .article-img img {
 width: 100%;
 height: 100%;
 object-fit: cover;
 transition: transform 0.3s;
 }
-
 .article-card:hover .article-img img {
 transform: scale(1.1);
 }
-
 .article-card .article-content {
 padding: 20px;
 }
-
 .article-card .article-meta {
 font-size: 14px;
 color: #666;
 margin-bottom: 10px;
 }
-
 .article-card .article-title {
 font-size: 18px;
 font-weight: bold;
 margin-bottom: 10px;
 color: var(--dark-color);
 }
-
 /* Filter Buttons */
 .filter-buttons {
 display: flex;
@@ -236,7 +193,6 @@ gap: 10px;
 margin-bottom: 40px;
 flex-wrap: wrap;
 }
-
 .filter-btn {
 padding: 8px 20px;
 border: 2px solid var(--primary-color);
@@ -246,35 +202,28 @@ border-radius: 25px;
 cursor: pointer;
 transition: all 0.3s;
 }
-
 .filter-btn:hover,
 .filter-btn.active {
 background: var(--primary-color);
 color: white;
 }
-
 /* Footer */
 footer {
 background: var(--dark-color);
 color: white;
 padding: 40px 0 20px;
 }
-
 .footer-links a {
 color: white;
 text-decoration: none;
 transition: color 0.3s;
 }
-
 .footer-links a:hover {
 color: var(--secondary-color);
 }
-
-
 </style>
 </head>
 <body>
-<!-- Header Top -->
 <div class="header-top">
 <div class="container">
 <div class="row align-items-center">
@@ -294,8 +243,6 @@ color: var(--secondary-color);
 </div>
 </div>
 </div>
-
-<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
 <div class="container">
 <a class="navbar-brand" href="index.html">
@@ -331,29 +278,21 @@ color: var(--secondary-color);
 </div>
 </div>
 </nav>
-
-<!-- Page Header -->
 <div class="page-header">
 <div class="container">
 <h1 class="display-4 fw-bold" data-aos="fade-up">تیم مدیریت بنیاد</h1>
 <p class="lead" data-aos="fade-up" data-aos-delay="100">افرادی که با تلاش و تعهد، آینده‌ای پاک می‌سازند</p>
 </div>
 </div>
-
-<!-- Team Members Section -->
 <section class="py-5">
 <div class="container">
-<!-- Filter Buttons -->
 <div class="filter-buttons" data-aos="fade-up">
 <button class="filter-btn active" data-filter="all">همه</button>
 <button class="filter-btn" data-filter="management">هیئت مدیره</button>
 <button class="filter-btn" data-filter="technical">تیم فنی</button>
 <button class="filter-btn" data-filter="research">تیم پژوهش</button>
 </div>
-
-<!-- Team Grid -->
 <div class="row" id="teamGrid">
-<!-- Member 1 -->
 <div class="col-md-4 col-sm-6 mb-4 team-member" data-category="management" data-aos="fade-up">
 <div class="team-card" data-bs-toggle="modal" data-bs-target="#memberModal1">
 <div class="team-img">
@@ -373,8 +312,6 @@ color: var(--secondary-color);
 </div>
 </div>
 </div>
-
-<!-- Member 2 -->
 <div class="col-md-4 col-sm-6 mb-4 team-member" data-category="management" data-aos="fade-up" data-aos-delay="100">
 <div class="team-card" data-bs-toggle="modal" data-bs-target="#memberModal2">
 <div class="team-img">
@@ -394,8 +331,6 @@ color: var(--secondary-color);
 </div>
 </div>
 </div>
-
-<!-- Member 3 -->
 <div class="col-md-4 col-sm-6 mb-4 team-member" data-category="technical" data-aos="fade-up" data-aos-delay="200">
 <div class="team-card" data-bs-toggle="modal" data-bs-target="#memberModal3">
 <div class="team-img">
@@ -415,8 +350,6 @@ color: var(--secondary-color);
 </div>
 </div>
 </div>
-
-<!-- Member 4 -->
 <div class="col-md-4 col-sm-6 mb-4 team-member" data-category="research" data-aos="fade-up" data-aos-delay="300">
 <div class="team-card" data-bs-toggle="modal" data-bs-target="#memberModal4">
 <div class="team-img">
@@ -436,8 +369,6 @@ color: var(--secondary-color);
 </div>
 </div>
 </div>
-
-<!-- Member 5 -->
 <div class="col-md-4 col-sm-6 mb-4 team-member" data-category="management" data-aos="fade-up" data-aos-delay="400">
 <div class="team-card" data-bs-toggle="modal" data-bs-target="#memberModal5">
 <div class="team-img">
@@ -457,8 +388,6 @@ color: var(--secondary-color);
 </div>
 </div>
 </div>
-
-<!-- Member 6 -->
 <div class="col-md-4 col-sm-6 mb-4 team-member" data-category="technical" data-aos="fade-up" data-aos-delay="500">
 <div class="team-card" data-bs-toggle="modal" data-bs-target="#memberModal6">
 <div class="team-img">
@@ -481,13 +410,10 @@ color: var(--secondary-color);
 </div>
 </div>
 </section>
-
-<!-- Articles Section -->
 <section class="articles-section">
 <div class="container">
 <h2 class="text-center mb-5" data-aos="fade-up">مقالات اعضای تیم</h2>
 <div class="row">
-<!-- Article 1 -->
 <div class="col-md-4 mb-4" data-aos="fade-up">
 <div class="article-card">
 <div class="article-img">
@@ -504,8 +430,6 @@ color: var(--secondary-color);
 </div>
 </div>
 </div>
-
-<!-- Article 2 -->
 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
 <div class="article-card">
 <div class="article-img">
@@ -522,8 +446,6 @@ color: var(--secondary-color);
 </div>
 </div>
 </div>
-
-<!-- Article 3 -->
 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
 <div class="article-card">
 <div class="article-img">
@@ -540,8 +462,6 @@ color: var(--secondary-color);
 </div>
 </div>
 </div>
-
-<!-- Article 4 -->
 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
 <div class="article-card">
 <div class="article-img">
@@ -558,8 +478,6 @@ color: var(--secondary-color);
 </div>
 </div>
 </div>
-
-<!-- Article 5 -->
 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
 <div class="article-card">
 <div class="article-img">
@@ -576,8 +494,6 @@ color: var(--secondary-color);
 </div>
 </div>
 </div>
-
-<!-- Article 6 -->
 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="500">
 <div class="article-card">
 <div class="article-img">
@@ -595,16 +511,11 @@ color: var(--secondary-color);
 </div>
 </div>
 </div>
-
-<!-- View More Button -->
 <div class="text-center mt-4">
 <a href="#" class="btn btn-primary btn-lg">مشاهده همه مقالات</a>
 </div>
 </div>
 </section>
-
-<!-- Modals for Team Members -->
-<!-- Modal 1 - دکتر حمید رضوی -->
 <div class="modal fade member-modal" id="memberModal1" tabindex="-1" aria-hidden="true">
 <div class="modal-dialog modal-lg">
 <div class="modal-content">
@@ -641,8 +552,6 @@ color: var(--secondary-color);
 </div>
 </div>
 </div>
-
-<!-- Modal 2 - مهندس رضا کریمی -->
 <div class="modal fade member-modal" id="memberModal2" tabindex="-1" aria-hidden="true">
 <div class="modal-dialog modal-lg">
 <div class="modal-content">
@@ -679,8 +588,6 @@ color: var(--secondary-color);
 </div>
 </div>
 </div>
-
-<!-- Modal 3 - مهندسی علی کریمی -->
 <div class="modal fade member-modal" id="memberModal3" tabindex="-1" aria-hidden="true">
 <div class="modal-dialog modal-lg">
 <div class="modal-content">
@@ -717,8 +624,6 @@ color: var(--secondary-color);
 </div>
 </div>
 </div>
-
-<!-- Modal 4 - دکتر علی نوروزی -->
 <div class="modal fade member-modal" id="memberModal4" tabindex="-1" aria-hidden="true">
 <div class="modal-dialog modal-lg">
 <div class="modal-content">
@@ -755,8 +660,6 @@ color: var(--secondary-color);
 </div>
 </div>
 </div>
-
-<!-- Modal 5 - دکتر بهرام شفیعی -->
 <div class="modal fade member-modal" id="memberModal5" tabindex="-1" aria-hidden="true">
 <div class="modal-dialog modal-lg">
 <div class="modal-content">
@@ -793,8 +696,6 @@ color: var(--secondary-color);
 </div>
 </div>
 </div>
-
-<!-- Modal 6 - مهندس حسین رحیمی -->
 <div class="modal fade member-modal" id="memberModal6" tabindex="-1" aria-hidden="true">
 <div class="modal-dialog modal-lg">
 <div class="modal-content">
@@ -831,8 +732,6 @@ color: var(--secondary-color);
 </div>
 </div>
 </div>
-
-<!-- Footer -->
 <footer>
 <div class="container">
 <div class="row">
@@ -868,40 +767,25 @@ color: var(--secondary-color);
 </div>
 </div>
 </footer>
-
-
-
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/main.js"></script>
-
-<!-- Inline Scripts -->
 <script>
-// Initialize AOS
 AOS.init({
 duration: 1000,
 once: true
 });
-
-// Filter Team Members
 const filterBtns = document.querySelectorAll('.filter-btn');
 const teamMembers = document.querySelectorAll('.team-member');
-
 filterBtns.forEach(btn => {
 btn.addEventListener('click', () => {
-// Remove active class from all buttons
 filterBtns.forEach(b => b.classList.remove('active'));
-// Add active class to clicked button
 btn.classList.add('active');
-
 const filterValue = btn.getAttribute('data-filter');
-
 teamMembers.forEach(member => {
 if (filterValue === 'all' || member.getAttribute('data-category') === filterValue) {
 member.style.display = 'block';
-// Re-trigger AOS animation
 AOS.refresh();
 } else {
 member.style.display = 'none';
@@ -909,8 +793,6 @@ member.style.display = 'none';
 });
 });
 });
-
-
 </script>
 </body>
 </html>

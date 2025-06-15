@@ -1,61 +1,44 @@
-/* ===================================
-   Aseman Abi Foundation - Main Stylesheet
-   Version: 1.0
-   Author: Aseman Abi Dev Team
-   =================================== */
 
-/* ===================================
-   1. CSS Variables & Root
-   =================================== */
 :root {
-    /* Primary Colors */
+
     --primary-color: #2196F3;
     --primary-dark: #1976D2;
     --primary-light: #42A5F5;
     --secondary-color: #87CEEB;
     --accent-color: #FFC107;
-    
-    /* Neutral Colors */
+
     --dark-color: #1a1a1a;
     --gray-dark: #495057;
     --gray: #6c757d;
     --gray-light: #adb5bd;
     --light-bg: #f8f9fa;
     --white: #ffffff;
-    
-    /* Status Colors */
+
     --success-color: #28a745;
     --danger-color: #dc3545;
     --warning-color: #ffc107;
     --info-color: #17a2b8;
-    
-    /* Typography */
+
     --font-primary: 'Vazir', 'IRANSans', Arial, sans-serif;
     --font-secondary: 'Yekan', Arial, sans-serif;
-    
-    /* Shadows */
+
     --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
     --shadow: 0 5px 15px rgba(0,0,0,0.1);
     --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
-    
-    /* Transitions */
+
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
-    
-    /* Border Radius */
+
     --radius-sm: 5px;
     --radius: 10px;
     --radius-lg: 15px;
     --radius-xl: 20px;
     --radius-round: 50%;
 }
-
-
 html {
     scroll-behavior: smooth;
 }
-
 body {
     font-family: var(--font-primary);
     line-height: 1.8;
@@ -66,7 +49,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-secondary);
     font-weight: bold;
@@ -74,71 +56,54 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
     color: var(--dark-color);
 }
-
 h1 { font-size: 2.5rem; }
 h2 { font-size: 2rem; }
 h3 { font-size: 1.75rem; }
 h4 { font-size: 1.5rem; }
 h5 { font-size: 1.25rem; }
 h6 { font-size: 1rem; }
-
 p {
     margin-bottom: 1rem;
     color: var(--gray-dark);
 }
-
 a {
     color: var(--primary-color);
     text-decoration: none;
     transition: color var(--transition-fast);
 }
-
 a:hover {
     color: var(--primary-dark);
 }
 
-/* ===================================
-   3. Utility Classes
-   =================================== */
 .container-fluid {
     max-width: 1400px;
 }
-
 .text-gradient {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
-
 .bg-gradient-primary {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
-
 .shadow-soft {
     box-shadow: var(--shadow);
 }
-
 .shadow-soft-lg {
     box-shadow: var(--shadow-lg);
 }
 
-/* Section Spacing */
 .section-padding {
     padding: 80px 0;
 }
-
 .section-padding-sm {
     padding: 60px 0;
 }
-
 .section-padding-lg {
     padding: 100px 0;
 }
 
-/* ===================================
-   4. Buttons & Forms
-   =================================== */
 .btn {
     padding: 12px 30px;
     border-radius: var(--radius);
@@ -148,31 +113,26 @@ a:hover {
     overflow: hidden;
     display: inline-block;
 }
-
 .btn-primary {
     background: var(--primary-color);
     color: white;
     border: none;
 }
-
 .btn-primary:hover {
     background: var(--primary-dark);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
 }
-
 .btn-outline-primary {
     background: transparent;
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
 }
-
 .btn-outline-primary:hover {
     background: var(--primary-color);
     color: white;
 }
 
-/* Ripple Effect */
 .btn .ripple {
     position: absolute;
     border-radius: var(--radius-round);
@@ -180,7 +140,6 @@ a:hover {
     transform: scale(0);
     animation: ripple-animation 0.6s ease-out;
 }
-
 @keyframes ripple-animation {
     to {
         transform: scale(4);
@@ -188,7 +147,6 @@ a:hover {
     }
 }
 
-/* Form Controls */
 .form-control, .form-select {
     padding: 12px 20px;
     border: 2px solid #e0e0e0;
@@ -196,33 +154,26 @@ a:hover {
     transition: all var(--transition-normal);
     font-family: var(--font-primary);
 }
-
 .form-control:focus, .form-select:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 0.2rem rgba(33, 150, 243, 0.25);
     outline: none;
 }
-
 .form-label {
     font-weight: 500;
     margin-bottom: 8px;
     color: var(--gray-dark);
 }
 
-/* Input Groups */
 .input-group-text {
     background: var(--light-bg);
     border: 2px solid #e0e0e0;
     border-left: none;
 }
-
 .input-group .form-control {
     border-right: none;
 }
 
-/* ===================================
-   5. Cards & Components
-   =================================== */
 .card {
     border: none;
     border-radius: var(--radius-lg);
@@ -231,23 +182,19 @@ a:hover {
     overflow: hidden;
     background: var(--white);
 }
-
 .card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
 }
-
 .card-header {
     background: var(--light-bg);
     border-bottom: 1px solid rgba(0,0,0,0.1);
     padding: 20px;
 }
-
 .card-body {
     padding: 30px;
 }
 
-/* Feature Cards */
 .feature-card {
     text-align: center;
     padding: 40px 30px;
@@ -255,7 +202,6 @@ a:hover {
     position: relative;
     overflow: hidden;
 }
-
 .feature-card::before {
     content: '';
     position: absolute;
@@ -266,11 +212,9 @@ a:hover {
     background: var(--primary-color);
     transition: height var(--transition-normal);
 }
-
 .feature-card:hover::before {
     height: 8px;
 }
-
 .feature-icon {
     width: 80px;
     height: 80px;
@@ -284,23 +228,18 @@ a:hover {
     margin: 0 auto 25px;
     transition: all var(--transition-normal);
 }
-
 .feature-card:hover .feature-icon {
     background: var(--primary-color);
     color: white;
     transform: scale(1.1);
 }
 
-/* ===================================
-   6. Navigation & Header
-   =================================== */
 .navbar {
     background: var(--white);
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-normal);
     padding: 15px 0;
 }
-
 .navbar-sticky {
     position: fixed;
     top: 0;
@@ -308,7 +247,6 @@ a:hover {
     z-index: 1030;
     animation: slideDown 0.3s ease-out;
 }
-
 @keyframes slideDown {
     from {
         transform: translateY(-100%);
@@ -317,16 +255,13 @@ a:hover {
         transform: translateY(0);
     }
 }
-
 .navbar-brand img {
     height: 50px;
     transition: transform var(--transition-normal);
 }
-
 .navbar-brand:hover img {
     transform: scale(1.05);
 }
-
 .navbar-nav .nav-link {
     color: var(--gray-dark);
     font-weight: 500;
@@ -334,7 +269,6 @@ a:hover {
     transition: all var(--transition-normal);
     position: relative;
 }
-
 .navbar-nav .nav-link::after {
     content: '';
     position: absolute;
@@ -345,31 +279,24 @@ a:hover {
     background: var(--primary-color);
     transition: all var(--transition-normal);
 }
-
 .navbar-nav .nav-link:hover::after,
 .navbar-nav .nav-link.active::after {
     width: 80%;
     right: 10%;
 }
-
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
     color: var(--primary-color);
 }
 
-/* Mobile Menu */
 .navbar-toggler {
     border: none;
     padding: 4px 12px;
 }
-
 .navbar-toggler:focus {
     box-shadow: none;
 }
 
-/* ===================================
-   7. Hero & Page Headers
-   =================================== */
 .hero-section {
     position: relative;
     overflow: hidden;
@@ -377,7 +304,6 @@ a:hover {
     display: flex;
     align-items: center;
 }
-
 .hero-bg {
     position: absolute;
     top: 0;
@@ -387,7 +313,6 @@ a:hover {
     object-fit: cover;
     z-index: -2;
 }
-
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -397,7 +322,6 @@ a:hover {
     background: rgba(0, 0, 0, 0.5);
     z-index: -1;
 }
-
 .page-header {
     background: linear-gradient(rgba(33, 150, 243, 0.8), rgba(33, 150, 243, 0.8)), 
                 url('../images/page-header-bg.jpg') center/cover;
@@ -407,7 +331,6 @@ a:hover {
     position: relative;
     overflow: hidden;
 }
-
 .page-header::before {
     content: '';
     position: absolute;
@@ -424,7 +347,6 @@ a:hover {
     );
     animation: slide 20s linear infinite;
 }
-
 @keyframes slide {
     0% {
         transform: translate(0, 0);
@@ -434,9 +356,6 @@ a:hover {
     }
 }
 
-/* ===================================
-   8. Footer
-   =================================== */
 footer {
     background: var(--dark-color);
     color: white;
@@ -444,7 +363,6 @@ footer {
     position: relative;
     overflow: hidden;
 }
-
 footer::before {
     content: '';
     position: absolute;
@@ -455,7 +373,6 @@ footer::before {
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
     animation: gradient-shift 3s ease infinite;
 }
-
 @keyframes gradient-shift {
     0%, 100% {
         transform: translateX(0);
@@ -464,14 +381,12 @@ footer::before {
         transform: translateX(10px);
     }
 }
-
 .footer-widget h5 {
     color: white;
     margin-bottom: 20px;
     position: relative;
     padding-bottom: 10px;
 }
-
 .footer-widget h5::after {
     content: '';
     position: absolute;
@@ -481,27 +396,22 @@ footer::before {
     height: 3px;
     background: var(--primary-color);
 }
-
 .footer-links {
     list-style: none;
     padding: 0;
 }
-
 .footer-links li {
     margin-bottom: 10px;
 }
-
 .footer-links a {
     color: #adb5bd;
     transition: all var(--transition-fast);
 }
-
 .footer-links a:hover {
     color: white;
     padding-right: 10px;
 }
 
-/* Social Icons */
 .social-icons a {
     display: inline-block;
     width: 40px;
@@ -514,16 +424,11 @@ footer::before {
     margin: 0 5px;
     transition: all var(--transition-normal);
 }
-
 .social-icons a:hover {
     background: var(--primary-color);
     transform: translateY(-3px);
 }
 
-/* ===================================
-   9. Animations & Effects
-   =================================== */
-/* Pulse Animation */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -538,12 +443,10 @@ footer::before {
         opacity: 1;
     }
 }
-
 .pulse {
     animation: pulse 2s infinite;
 }
 
-/* Float Animation */
 @keyframes float {
     0%, 100% {
         transform: translateY(0);
@@ -552,12 +455,10 @@ footer::before {
         transform: translateY(-20px);
     }
 }
-
 .float {
     animation: float 3s ease-in-out infinite;
 }
 
-/* Fade In Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -568,19 +469,16 @@ footer::before {
         transform: translateY(0);
     }
 }
-
 .fade-in {
     animation: fadeIn 0.5s ease-out;
 }
 
-/* Loading Spinner */
 .spinner-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 200px;
 }
-
 .spinner {
     width: 50px;
     height: 50px;
@@ -589,21 +487,18 @@ footer::before {
     border-radius: var(--radius-round);
     animation: spin 1s linear infinite;
 }
-
 @keyframes spin {
     to {
         transform: rotate(360deg);
     }
 }
 
-/* Progress Bar */
 .progress {
     height: 8px;
     background: var(--light-bg);
     border-radius: 10px;
     overflow: hidden;
 }
-
 .progress-bar {
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     height: 100%;
@@ -611,7 +506,6 @@ footer::before {
     position: relative;
     overflow: hidden;
 }
-
 .progress-bar::after {
     content: '';
     position: absolute;
@@ -627,7 +521,6 @@ footer::before {
     );
     animation: shimmer 2s infinite;
 }
-
 @keyframes shimmer {
     0% {
         transform: translateX(-100%);
@@ -637,52 +530,39 @@ footer::before {
     }
 }
 
-/* ===================================
-   11. Responsive Design
-   =================================== */
-/* Tablet Styles */
 @media (max-width: 992px) {
     .section-padding {
         padding: 60px 0;
     }
-    
     h1 { font-size: 2rem; }
     h2 { font-size: 1.75rem; }
     h3 { font-size: 1.5rem; }
-    
     .navbar-nav {
         text-align: center;
         padding: 20px 0;
     }
-    
     .navbar-nav .nav-link::after {
         display: none;
     }
 }
 
-/* Mobile Styles */
 @media (max-width: 576px) {
     .section-padding {
         padding: 40px 0;
     }
-    
     h1 { font-size: 1.75rem; }
     h2 { font-size: 1.5rem; }
     h3 { font-size: 1.25rem; }
-    
     .btn {
         padding: 10px 20px;
         font-size: 14px;
     }
-    
     .card-body {
         padding: 20px;
     }
-    
     .page-header {
         padding: 80px 0 40px;
     }
-    
     .dark-mode-toggle {
         width: 45px;
         height: 45px;
@@ -691,15 +571,11 @@ footer::before {
     }
 }
 
-/* ===================================
-   12. Print Styles
-   =================================== */
 @media print {
     body {
         background: white;
         color: black;
     }
-    
     .navbar,
     footer,
     .dark-mode-toggle,
@@ -707,27 +583,20 @@ footer::before {
     .no-print {
         display: none !important;
     }
-    
     .container {
         max-width: 100%;
     }
-    
     a {
         color: black;
         text-decoration: underline;
     }
 }
 
-/* ===================================
-   13. Accessibility
-   =================================== */
-/* Focus Styles */
 *:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
 
-/* Skip to Content */
 .skip-to-content {
     position: absolute;
     top: -40px;
@@ -739,12 +608,10 @@ footer::before {
     border-radius: 0 0 5px 0;
     transition: top 0.3s;
 }
-
 .skip-to-content:focus {
     top: 0;
 }
 
-/* Screen Reader Only */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -757,7 +624,6 @@ footer::before {
     border: 0;
 }
 
-/* High Contrast Mode */
 @media (prefers-contrast: high) {
     :root {
         --primary-color: #0066cc;
@@ -765,13 +631,11 @@ footer::before {
         --dark-color: #000000;
         --white: #ffffff;
     }
-    
     * {
         border-color: currentColor !important;
     }
 }
 
-/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -782,60 +646,46 @@ footer::before {
     }
 }
 
-/* ===================================
-   14. Custom Scrollbar
-   =================================== */
 ::-webkit-scrollbar {
     width: 10px;
 }
-
 ::-webkit-scrollbar-track {
     background: var(--light-bg);
 }
-
 ::-webkit-scrollbar-thumb {
     background: var(--primary-color);
     border-radius: 5px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-dark);
 }
 
-/* Firefox Scrollbar */
 * {
     scrollbar-width: thin;
     scrollbar-color: var(--primary-color) var(--light-bg);
 }
 
-/* ===================================
-   15. Helper Classes
-   =================================== */
 .text-primary { color: var(--primary-color) !important; }
 .text-secondary { color: var(--secondary-color) !important; }
 .text-success { color: var(--success-color) !important; }
 .text-danger { color: var(--danger-color) !important; }
 .text-warning { color: var(--warning-color) !important; }
 .text-info { color: var(--info-color) !important; }
-
 .bg-primary { background-color: var(--primary-color) !important; }
 .bg-secondary { background-color: var(--secondary-color) !important; }
 .bg-light { background-color: var(--light-bg) !important; }
 .bg-dark { background-color: var(--dark-color) !important; }
-
 .rounded-sm { border-radius: var(--radius-sm) !important; }
 .rounded { border-radius: var(--radius) !important; }
 .rounded-lg { border-radius: var(--radius-lg) !important; }
 .rounded-xl { border-radius: var(--radius-xl) !important; }
 .rounded-circle { border-radius: var(--radius-round) !important; }
-
 .opacity-0 { opacity: 0 !important; }
 .opacity-25 { opacity: 0.25 !important; }
 .opacity-50 { opacity: 0.5 !important; }
 .opacity-75 { opacity: 0.75 !important; }
 .opacity-100 { opacity: 1 !important; }
 
-/* Z-index */
 .z-0 { z-index: 0 !important; }
 .z-10 { z-index: 10 !important; }
 .z-20 { z-index: 20 !important; }
