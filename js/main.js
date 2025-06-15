@@ -605,47 +605,97 @@ document.addEventListener('DOMContentLoaded', function() {
        =================================== */
     
     // Initialize Swiper sliders if they exist
-    if (typeof Swiper !== 'undefined') {
-        // Hero Slider
-        const heroSlider = new Swiper('.hero-slider', {
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
+    // Initialize Swiper sliders if they exist
+if (typeof Swiper !== 'undefined') {
+    // Hero Slider - تصحیح شده
+    const heroSlider = new Swiper('.hero-slider', {
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            dynamicBullets: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            disabledClass: 'swiper-button-disabled',
+        },
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        speed: 1000,
+        watchSlidesProgress: true,
+        watchSlidesVisibility: true,
+        // رفع مشکل دکمه‌ها پس از loop
+        observer: true,
+        observeParents: true,
+        // تنظیمات اضافی برای عملکرد بهتر
+        centeredSlides: true,
+        grabCursor: true,
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true,
+        },
+        // رویدادها برای رفع مشکل
+        on: {
+            init: function () {
+                console.log('Hero Slider initialized');
+                // اطمینان از فعال بودن دکمه‌ها
+                this.navigation.update();
             },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
+            slideChange: function () {
+                console.log('Slide changed to:', this.activeIndex);
             },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+            reachEnd: function () {
+                // وقتی به آخرین اسلاید رسید
+                this.navigation.update();
             },
-            effect: 'fade',
-        });
-        
-        // Articles Slider
-        const articlesSlider = new Swiper('.articles-slider', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
+            reachBeginning: function () {
+                // وقتی به اولین اسلاید رسید
+                this.navigation.update();
+            }
+        }
+    });
+
+    // Articles Slider - بهبود یافته
+    const articlesSlider = new Swiper('.articles-slider', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '.articles-slider .swiper-button-next',
+            prevEl: '.articles-slider .swiper-button-prev',
+        },
+        pagination: {
+            el: '.articles-slider .swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
             },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                },
-                768: {
-                    slidesPerView: 3,
-                },
-                1024: {
-                    slidesPerView: 4,
-                },
+            768: {
+                slidesPerView: 3,
             },
-        });
-    }
+            1024: {
+                slidesPerView: 4,
+            },
+        },
+        observer: true,
+        observeParents: true,
+    });
+}
+
     
     // Initialize Leaflet map if it exists
     if (typeof L !== 'undefined' && document.getElementById('map')) {

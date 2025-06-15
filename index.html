@@ -209,7 +209,7 @@ white-space: nowrap;
 <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="navbarNav">
-<ul class="navbar-nav ms-auto">
+<ul class="navbar-nav me-auto">
 <li class="nav-item">
 <a class="nav-link active" href="index.html">صفحه اصلی</a>
 </li>
@@ -263,12 +263,22 @@ white-space: nowrap;
 <p class="lead mb-4">هر پنجشنبه با ما رکاب بزنید</p>
 <a href="calendar.html" class="btn btn-primary btn-lg">مشاهده برنامه‌ها</a>
 </div>
+<div class="news-ticker">
+<div class="ticker-content" style="text-align: center;">
+<strong  >آخرین خبر:</strong> همایش ملی هوای پاک - ۱۵ دی ماه | ثبت‌نام آغاز شد
+</div>
+</div>
 </div>
 <div class="swiper-slide" style="background-image: url('images/wind-solar.webp');  background-size: 1300px 500px; background-position: center;  background-repeat: no-repeat;">
 <div class="hero-content">
 <h1 class="display-4 fw-bold mb-4">انرژی پاک، آینده روشن</h1>
 <p class="lead mb-4">آموزش استفاده از انرژی‌های تجدیدپذیر</p>
 <a href="about.html" class="btn btn-primary btn-lg">بیشتر بدانید</a>
+</div>
+<div class="news-ticker">
+<div class="ticker-content" style="text-align: center;">
+<strong  >آخرین خبر:</strong> دوچرخه‌سواری پنجشنبه‌های سبز - هر هفته در پارک ملت
+</div>
 </div>
 </div>
 </div>
@@ -716,6 +726,19 @@ searchModal.show();
 
 </script>
 
+<!-- انتهای index.html قبل از </body> -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+const heroSwiper = new Swiper('.hero-slider', {
+    loop: true,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+    },
+    autoplay: false
+});
+</script>
 
 </body>
 </html>
